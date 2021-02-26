@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dinosauria:item/dinosauria_guide_book"
+  }
+}

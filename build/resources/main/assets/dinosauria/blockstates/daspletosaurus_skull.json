@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=north": { "model": "dinosauria:block/daspletosaurus_skull"},
+    "facing=south": { "model": "dinosauria:block/daspletosaurus_skull", "y":  180 },
+    "facing=west": { "model": "dinosauria:block/daspletosaurus_skull", "y":  270 },
+    "facing=east": { "model": "dinosauria:block/daspletosaurus_skull", "y": 90 }
+
+  }
+}
