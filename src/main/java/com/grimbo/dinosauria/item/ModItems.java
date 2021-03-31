@@ -7,6 +7,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
 
 public class ModItems {
+
     public static final RegistryObject<Item> COOKED_EGG =
             Registration.ITEMS.register("cooked_egg",
                     () -> new CookedEgg());
@@ -299,6 +300,12 @@ public class ModItems {
 
 
     public static void register() {}
+
+    //function to register with less code and easier
+        public static RegistryObject<Item> registerItem (String nameOfItem, ItemGroup itemGroup)   {
+                Registration.ITEMS.register(nameOfItem
+                    () -> new Item(new Item.Properties().group(itemGroup)));
+        }
 
 
 }
