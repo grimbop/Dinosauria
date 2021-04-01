@@ -2,7 +2,6 @@ package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.util.Registration;
-import com.sun.corba.se.spi.ior.ObjectKey;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -16,288 +15,216 @@ import java.util.function.Supplier;
 
 public class ModItems {
 
-    public static final RegistryObject<Item> COOKED_EGG = Registration.ITEMS.register("cooked_egg",
-            () -> new Item(new Item.Properties().food(new Food.Builder().hunger(3).saturation(1.5f).build())));
+    /*
+    ARMOR
+     */
 
+    //CERATOPIAN
+    public static final RegistryObject<Item> CERATOPTIAN_DIAMOND_ARMOR = registerItem("ceratoptian_diamond_armor");
 
-    public static final RegistryObject<Item> CERATOPTIAN_DIAMOND_ARMOR =
-            Registration.ITEMS.register("ceratoptian_diamond_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> CERATOPTIAN_GOLD_ARMOR = registerItem("ceratoptian_gold_armor");
 
-    public static final RegistryObject<Item> CERATOPTIAN_GOLD_ARMOR =
-            Registration.ITEMS.register("ceratoptian_gold_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> CERATOPTIAN_IRON_ARMOR = registerItem("ceratoptian_iron_armor");
 
-    public static final RegistryObject<Item> CERATOPTIAN_IRON_ARMOR =
-            Registration.ITEMS.register("ceratoptian_iron_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> CERATOPTIAN_NETHERITE_ARMOR = registerItem("ceratoptian_netherite_armor");
 
-    public static final RegistryObject<Item> CERATOPTIAN_NETHERITE_ARMOR =
-            Registration.ITEMS.register("ceratoptian_netherite_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    //SAUROPOD
+    public static final RegistryObject<Item> SAUROPOD_GOLD_ARMOR = registerItem("sauropod_gold_armor");
 
-    public static final RegistryObject<Item> COOKED_THIGH =
-            Registration.ITEMS.register("cooked_thigh",
-                    () -> new CookedThigh());
+    public static final RegistryObject<Item> SAUROPOD_IRON_ARMOR = registerItem("sauropod_iron_armor");
 
-    public static final RegistryObject<Item> COOKED_MEAT =
-            Registration.ITEMS.register("cooked_meat",
-                    () -> new CookedMeat());
+    public static final RegistryObject<Item> SAUROPOD_NETHERITE_ARMOR = registerItem("sauropod_netherite_armor");
 
-    public static final RegistryObject<Item> COOKED_FISH_MEAT =
-            Registration.ITEMS.register("cooked_fish_meat",
-                    () -> new CookedFishMeat());
+    public static final RegistryObject<Item> SAUROPOD_DIAMOND_ARMOR = registerItem("sauropod_diamond_armor");
 
-    public static final RegistryObject<Item> SAUROPOD_SADDLE =
-            Registration.ITEMS.register("sauropod_saddle",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> SAUROPOD_SADDLE = registerItem("sauropod_saddle");
 
-    public static final RegistryObject<Item> SAUROPOD_GOLD_ARMOR =
-            Registration.ITEMS.register("sauropod_gold_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    //THEROPOD
 
-    public static final RegistryObject<Item> SAUROPOD_IRON_ARMOR =
-            Registration.ITEMS.register("sauropod_iron_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> THEROPOD_IRON_ARMOR = registerItem("theropod_iron_armor");
 
-    public static final RegistryObject<Item> SAUROPOD_NETHERITE_ARMOR =
-            Registration.ITEMS.register("sauropod_netherite_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> THEROPOD_LEATHER_ARMOR = registerItem("theropod_leather_armor");
 
-    public static final RegistryObject<Item> THEROPOD_IRON_ARMOR =
-            Registration.ITEMS.register("theropod_iron_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> THEROPOD_GOLD_ARMOR = registerItem("theropod_gold_armor");
 
-    public static final RegistryObject<Item> THEROPOD_LEATHER_ARMOR =
-            Registration.ITEMS.register("theropod_leather_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> THEROPOD_NETHERITE_ARMOR = registerItem("theropod_netherite_armor");
 
-    public static final RegistryObject<Item> THEROPOD_GOLD_ARMOR =
-            Registration.ITEMS.register("theropod_gold_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> THEROPOD_DIAMOND_ARMOR = registerItem("theropod_diamond_armor");
 
-    public static final RegistryObject<Item> THEROPOD_NETHERITE_ARMOR =
-            Registration.ITEMS.register("theropod_netherite_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> THEROPOD_SADDLE = registerItem("theropod_saddle");
 
-    public static final RegistryObject<Item> THEROPOD_SADDLE =
-            Registration.ITEMS.register("theropod_saddle",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> RAW_MEAT =
-            Registration.ITEMS.register("raw_meat",
-                    () -> new RawMeat());
 
-    public static final RegistryObject<Item> OLD_PAPER =
-            Registration.ITEMS.register("old_paper",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    //ANKY
+        public static final RegistryObject<Item> ANKY_IRON_ARMOR = registerItem("anky_iron_armor");
 
-    public static final RegistryObject<Item> LORE_BOOK =
-            Registration.ITEMS.register("lore_book",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> ANKY_GOLD_ARMOR = registerItem("anky_gold_armor");
 
-    public static final RegistryObject<Item> RAW_THIGH =
-            Registration.ITEMS.register("raw_thigh",
-                    () -> new RawThigh());
+    public static final RegistryObject<Item> ANKY_DIAMOND_ARMOR = registerItem("anky_diamond_armor");
 
-    public static final RegistryObject<Item> ANKY_IRON_ARMOR =
-            Registration.ITEMS.register("anky_iron_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> ANKY_NETHERITE_ARMOR = registerItem("anky_netherite_armor");
 
-    public static final RegistryObject<Item> ANKY_GOLD_ARMOR =
-            Registration.ITEMS.register("anky_gold_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    //MARINE
+        public static final RegistryObject<Item> MARINE_IRON_ARMOR = registerItem("marine_iron_armor");
 
-    public static final RegistryObject<Item> ANKY_DIAMOND_ARMOR =
-            Registration.ITEMS.register("anky_diamond_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> MARINE_GOLD_ARMOR = registerItem("marine_gold_armor");
 
+    public static final RegistryObject<Item> MARINE_DIAMOND_ARMOR = registerItem("marine_diamond_armor");
 
-    public static final RegistryObject<Item> ANKY_NETHERITE_ARMOR =
-            Registration.ITEMS.register("anky_netherite_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> MARINE_NETHERITE_ARMOR = registerItem("marine_netherite_armor");
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_SKULL =
-            Registration.ITEMS.register("daspleto_fossil_skull",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_SKULL =
-            Registration.ITEMS.register("daspleto_fresh_skull",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    //STEGOSAURIN
+     public static final RegistryObject<Item> STEGOSAURIAN_IRON_ARMOR = registerItem("stegosaurian_iron_armor");
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_NECK =
-            Registration.ITEMS.register("daspleto_fossil_neck",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> STEGOSAURIAN_GOLD_ARMOR = registerItem("stegosaurian_gold_armor");
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_NECK =
-            Registration.ITEMS.register("daspleto_fresh_neck",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> STEGOSAURIAN_DIAMOND_ARMOR = registerItem("stegosaurian_diamond_armor");
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_VERTEBRAE =
-            Registration.ITEMS.register("daspleto_fossil_vertebrae",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> STEGOSAURIAN_NETHERITE_ARMOR = registerItem("stegosaurian_netherite_armor");
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_VERTEBRAE =
-            Registration.ITEMS.register("daspleto_fresh_vertebrae",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_RIBS =
-            Registration.ITEMS.register("daspleto_fossil_ribs",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    //CERATOPSIAN
+      public static final RegistryObject<Item> CERATOPSIAN_IRON_ARMOR = registerItem("ceratopsian_iron_armor");
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_RIBS =
-            Registration.ITEMS.register("daspleto_fresh_ribs",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> CERATOPSIAN_GOLD_ARMOR = registerItem("ceratopsian_gold_armor");
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_TAIL =
-            Registration.ITEMS.register("daspleto_fossil_tail",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> CERATOPSIAN_DIAMOND_ARMOR = registerItem("ceratopsian_diamond_armor");
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_TAIL =
-            Registration.ITEMS.register("daspleto_fresh_tail",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> CERATOPSIAN_NETHERITE_ARMOR = registerItem("ceratopsian_netherite_armor");
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_BELLY =
-            Registration.ITEMS.register("daspleto_fossil_belly",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DINO_CHEST = registerItem("dino_chest");
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_BELLY =
-            Registration.ITEMS.register("daspleto_fresh_belly",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> PTERODACTYL_ELYTRA = registerItem("pterodactyl_elytra");
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_ARM =
-            Registration.ITEMS.register("daspleto_fossil_arm",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_ARM =
-            Registration.ITEMS.register("daspleto_fresh_arm",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_LEG =
-            Registration.ITEMS.register("daspleto_fossil_leg",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    /*
+    END OF ARMOR
+     */
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_LEG =
-            Registration.ITEMS.register("daspleto_fresh_leg",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_HAND =
-            Registration.ITEMS.register("daspleto_fossil_hand",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_HAND =
-            Registration.ITEMS.register("daspleto_fresh_hand",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    /*
+    BOOKS
+     */
 
-    public static final RegistryObject<Item> DASPLETO_FOSSIL_FOOT =
-            Registration.ITEMS.register("daspleto_fossil_foot",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> OLD_PAPER = registerItem("old_paper");
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_FOOT =
-            Registration.ITEMS.register("daspleto_fresh_foot",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> LORE_BOOK = registerItem("lore_book");
 
-    public static final RegistryObject<Item> DASPLETO_FRESH_TOOTH =
-            Registration.ITEMS.register("daspleto_fresh_tooth",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DINOSAURIA_GUIDE_BOOK = registerItem("dinosauria_guide_book");
 
-    public static final RegistryObject<Item> THEROPOD_BONE =
-            Registration.ITEMS.register("theropod_bone",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> SAUROPOD_DIAMOND_ARMOR =
-            Registration.ITEMS.register("sauropod_diamond_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    /*
+    END OF BOOKS
+     */
 
-    public static final RegistryObject<Item> THEROPOD_DIAMOND_ARMOR =
-            Registration.ITEMS.register("theropod_diamond_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> DINOSAURIA_GUIDE_BOOK =
-            Registration.ITEMS.register("dinosauria_guide_book",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> MARINE_IRON_ARMOR =
-            Registration.ITEMS.register("marine_iron_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    /*
+    BONES
+     */
 
-    public static final RegistryObject<Item> MARINE_GOLD_ARMOR =
-            Registration.ITEMS.register("marine_gold_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_SKULL = registerItem("daspleto_fossil_skull");
 
-    public static final RegistryObject<Item> MARINE_DIAMOND_ARMOR =
-            Registration.ITEMS.register("marine_diamond_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FRESH_SKULL = registerItem("daspleto_fresh_skull");
 
-    public static final RegistryObject<Item> MARINE_NETHERITE_ARMOR =
-            Registration.ITEMS.register("marine_netherite_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_NECK = registerItem("daspleto_fossil_neck");
 
-    public static final RegistryObject<Item> STEGOSAURIAN_IRON_ARMOR =
-            Registration.ITEMS.register("stegosaurian_iron_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FRESH_NECK = registerItem("daspleto_fresh_neck");
 
-    public static final RegistryObject<Item> STEGOSAURIAN_GOLD_ARMOR =
-            Registration.ITEMS.register("stegosaurian_gold_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_VERTEBRAE = registerItem("daspleto_fossil_vertebrae");
 
-    public static final RegistryObject<Item> STEGOSAURIAN_DIAMOND_ARMOR =
-            Registration.ITEMS.register("stegosaurian_diamond_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FRESH_VERTEBRAE = registerItem("daspleto_fresh_vertebrae");
 
-    public static final RegistryObject<Item> STEGOSAURIAN_NETHERITE_ARMOR =
-            Registration.ITEMS.register("stegosaurian_netherite_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_RIBS = registerItem("daspleto_fossil_ribs");
 
-    public static final RegistryObject<Item> CERATOPSIAN_IRON_ARMOR =
-            Registration.ITEMS.register("ceratopsian_iron_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FRESH_RIBS = registerItem("daspleto_fresh_ribs");
 
-    public static final RegistryObject<Item> CERATOPSIAN_GOLD_ARMOR =
-            Registration.ITEMS.register("ceratopsian_gold_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_TAIL = registerItem("daspleto_fossil_tail");
 
-    public static final RegistryObject<Item> CERATOPSIAN_DIAMOND_ARMOR =
-            Registration.ITEMS.register("ceratopsian_diamond_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FRESH_TAIL = registerItem("daspleto_fresh_tail");
 
-    public static final RegistryObject<Item> CERATOPSIAN_NETHERITE_ARMOR =
-            Registration.ITEMS.register("ceratopsian_netherite_armor",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_BELLY = registerItem("daspleto_fossil_belly");
 
-    public static final RegistryObject<Item> PTERODACTYL_ELYTRA =
-            Registration.ITEMS.register("pterodactyl_elytra",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FRESH_BELLY = registerItem("daspleto_fresh_belly");
 
-    public static final RegistryObject<Item> DINO_CHEST =
-            Registration.ITEMS.register("dino_chest",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_ARM = registerItem("daspleto_fossil_arm");
 
-    public static final RegistryObject<Item> DILOPHOSAURUS_EGG =
-            Registration.ITEMS.register("dilophosaurus_egg",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FRESH_ARM = registerItem("daspleto_fresh_arm");
 
-    public static final RegistryObject<Item> DASPLETOSAURUS_EGG =
-            Registration.ITEMS.register("daspletosaurus_egg",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_LEG = registerItem("daspleto_fossil_leg");
 
-    public static final RegistryObject<Item> BARYONYX_EGG =
-            Registration.ITEMS.register("baryonyx_egg",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FRESH_LEG = registerItem("daspleto_fresh_leg");
 
-    public static final RegistryObject<Item> NIGERSAURUS_EGG =
-            Registration.ITEMS.register("nigersaurus_egg",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_HAND = registerItem("daspleto_fossil_hand");
 
-    public static final RegistryObject<Item> ANKY_EGG =
-            Registration.ITEMS.register("anky_egg",
-                    () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> DASPLETO_FRESH_HAND = registerItem("daspleto_fresh_hand");
 
-    public static final RegistryObject<Item> BURGER = registerFood("burger", 8, 2.5f);
+    public static final RegistryObject<Item> DASPLETO_FOSSIL_FOOT = registerItem("daspleto_fossil_foot");
 
+    public static final RegistryObject<Item> DASPLETO_FRESH_FOOT = registerItem("daspleto_fresh_foot");
 
+    public static final RegistryObject<Item> DASPLETO_FRESH_TOOTH = registerItem("daspleto_fresh_tooth");
 
-    
+    public static final RegistryObject<Item> THEROPOD_BONE = registerItem("theropod_bone");
+
+
+
+    /*
+    END OF BONES
+     */
+
+
+
+
+    /*
+    EGGS
+     */
+
+    public static final RegistryObject<Item> DILOPHOSAURUS_EGG = registerItem("dilophosaurus_egg");
+
+    public static final RegistryObject<Item> DASPLETOSAURUS_EGG = registerItem("daspletosaurus_egg");
+
+    public static final RegistryObject<Item> BARYONYX_EGG = registerItem("baryonyx_egg");
+
+    public static final RegistryObject<Item> NIGERSAURUS_EGG = registerItem("nigersaurus_egg");
+
+    public static final RegistryObject<Item> ANKY_EGG = registerItem("anky_egg");
+
+    /*
+    END OF EGGS
+     */
+
+
+
+    /*
+    FOOD
+     */
+    public static final RegistryObject<Item> BURGER = registerFood("burger", 8, 2);
+
+    public static final RegistryObject<Item> COOKED_EGG = registerFood("cooked_egg", 3,1.5f);
+
+    public static final RegistryObject<Item> COOKED_THIGH = registerFood("cooked_thigh", 5, 1.5f);
+
+    public static final RegistryObject<Item> COOKED_MEAT = registerFood("cooked_meat",5,1.5f);
+
+    public static final RegistryObject<Item> COOKED_FISH_MEAT = registerFood("cooked_fish_meat", 5, 1.5f);
+
+    public static final RegistryObject<Item> RAW_THIGH = registerInfectedFood("raw_thigh",
+            1, Effects.HUNGER, 300, 1, 0.2f);
+
+    public static final RegistryObject<Item> RAW_MEAT = registerInfectedFood("raw_meat",
+            1, Effects.HUNGER, 300, 1, 0.2f);
+
+    /*
+    END OF FOOD
+     */
+
+
+
+    //fuctions
     public static void register() {}
 
 
@@ -330,7 +257,7 @@ public class ModItems {
         return Registration.ITEMS.register(nameOfItem,//set nameOfItem
                 () -> new Item(new Item.Properties().food(new Food.Builder().
                         hunger( Math.abs(hunger) ).//set hunger
-                        saturation( Math.max(0.5f,saturation) ).build()).//set saturation
+                        saturation( Math.max(0.2f,saturation) ).build()).//set saturation
                         group( Dinosauria.DINOSAURIA).group( ItemGroup.FOOD) ));//set group
 
     }
