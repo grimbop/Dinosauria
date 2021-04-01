@@ -7,6 +7,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 
 public class RawMeat extends Item {
+
     public RawMeat()
     {
         super(new Properties().group(Dinosauria.DINOSAURIA)

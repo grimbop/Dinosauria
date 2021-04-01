@@ -2,15 +2,23 @@ package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.util.Registration;
+import com.sun.corba.se.spi.ior.ObjectKey;
+import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
+import org.lwjgl.system.CallbackI;
+
+import java.util.function.Supplier;
 
 public class ModItems {
 
-    public static final RegistryObject<Item> COOKED_EGG =
-            Registration.ITEMS.register("cooked_egg",
-                    () -> new CookedEgg());
+    public static final RegistryObject<Item> COOKED_EGG = Registration.ITEMS.register("cooked_egg",
+            () -> new Item(new Item.Properties().food(new Food.Builder().hunger(3).saturation(1.5f).build())));
+
 
     public static final RegistryObject<Item> CERATOPTIAN_DIAMOND_ARMOR =
             Registration.ITEMS.register("ceratoptian_diamond_armor",
@@ -285,27 +293,61 @@ public class ModItems {
             Registration.ITEMS.register("anky_egg",
                     () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> BURGER =
-            Registration.ITEMS.register("burger",
-                    () -> new Burger());
+    public static final RegistryObject<Item> BURGER = registerFood("burger", 8, 2.5f);
 
 
 
-
-
-
-
-
-
-
-
+    
     public static void register() {}
 
-    //function to register with less code and easier
-        public static RegistryObject<Item> registerItem (String nameOfItem, ItemGroup itemGroup)   {
-                Registration.ITEMS.register(nameOfItem,
-                    () -> new Item(new Item.Properties().group(itemGroup)));
-        }
 
+    //function to register items without specific class
+    public static RegistryObject<Item> registerItem (String nameOfItem)   {
+
+        return Registration.ITEMS.register(nameOfItem,
+                () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
+    }
+
+
+    //"registerItem" fuction with specific group
+    public static RegistryObject<Item> registerItem (String nameOfItem, ItemGroup itemGroup)   {
+
+                return Registration.ITEMS.register(nameOfItem,
+                        () -> new Item(new Item.Properties().group(itemGroup)));
+    }
+
+
+    //"registerItem" fuction with supplier, to add others classes
+    public static <T extends Item> RegistryObject<Item> registerItem (String nameOfItem, Supplier<T> supplier)   {
+
+        return Registration.ITEMS.register(nameOfItem, supplier);
+    }
+
+
+    //function to register food
+    public static RegistryObject<Item> registerFood (String nameOfItem, int hunger, float saturation)   {
+
+        return Registration.ITEMS.register(nameOfItem,//set nameOfItem
+                () -> new Item(new Item.Properties().food(new Food.Builder().
+                        hunger( Math.abs(hunger) ).//set hunger
+                        saturation( Math.max(0.5f,saturation) ).build()).//set saturation
+                        group( Dinosauria.DINOSAURIA).group( ItemGroup.FOOD) ));//set group
+
+    }
+
+
+    //fuction to register infectedFood
+    public static <T extends Object> RegistryObject<Item> registerInfectedFood
+            (String nameOfItem, int hunger, Effect effects, int duration, int amplifier, float probability)   {
+
+        return Registration.ITEMS.register(nameOfItem,
+                () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)
+                        .food(new Food.Builder()
+                        .hunger(Math.abs(hunger))//sets a absolute "hunger"
+                        .effect(() -> new EffectInstance(effects, duration, Math.min(amplifier,255)), probability)//set the type, duration, amplifier and probality
+                        .build())
+                            ));
+
+    }
 
 }
