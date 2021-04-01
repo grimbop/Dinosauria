@@ -303,7 +303,7 @@ public class ModItems {
 
     //function to register with less code and easier
         public static RegistryObject<Item> registerItem (String nameOfItem, ItemGroup itemGroup)   {
-                Registration.ITEMS.register(nameOfItem
+                Registration.ITEMS.register(nameOfItem,
                     () -> new Item(new Item.Properties().group(itemGroup)));
         }
 
