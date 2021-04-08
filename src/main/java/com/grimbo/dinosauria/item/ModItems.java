@@ -122,6 +122,7 @@ public class ModItems {
 
 
 
+
     /*
     BONES
      */
@@ -178,7 +179,6 @@ public class ModItems {
 
 
 
-
     /*
     EGGS
      */
@@ -196,6 +196,29 @@ public class ModItems {
     /*
     END OF EGGS
      */
+
+
+
+
+    /*
+    TOOLS
+     */
+
+    /*
+    END OD TOOLS
+     */
+
+
+
+
+    /*
+    WEAPONS
+     */
+
+    /*
+    END OF WEAPONS
+     */
+
 
 
 
@@ -218,9 +241,29 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_MEAT = registerInfectedFood("raw_meat",
             1, Effects.HUNGER, 300, 1, 0.2f);
 
+    public static final RegistryObject<Item> SPICY_BREAD = registerInfectedFood("spicy_bread",
+            1, Effects.SPEED, 200, 1, 1);
+
     /*
     END OF FOOD
      */
+
+
+
+
+    /*
+    MATERIALS
+     */
+
+
+
+    public static final RegistryObject<Item> SPICY_WHEAT = registerItem("spicy_wheat");
+
+    /*
+    END OF MATERIALS
+     */
+
+
 
 
 
@@ -276,5 +319,10 @@ public class ModItems {
                             ));
 
     }
+
+
+    //MATERIALS
+
+
 
 }
