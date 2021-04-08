@@ -68,13 +68,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/assets/dinosauria/textures/item" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/data/dinosauria/recipes" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\textures\item" />
       <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\data\dinosauria\recipes" />
       <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\models\item" />
+      <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\textures\item" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\textures\item" />

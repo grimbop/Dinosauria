@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "dinosauria:item/theropod_bone"
+    "layer0": "dinosauria:item/fossil_theropod_bone"
   }
 }

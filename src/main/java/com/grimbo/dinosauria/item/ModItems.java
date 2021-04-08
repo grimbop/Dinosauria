@@ -22,6 +22,49 @@ public class ModItems {
     ARMOR
      */
 
+    /*
+    UNOBTAINABLE ARMOR
+        /*
+
+
+    //ANKY
+    public static final RegistryObject<Item> ANKY_IRON_ARMOR = registerItem("anky_iron_armor");
+
+    public static final RegistryObject<Item> ANKY_GOLD_ARMOR = registerItem("anky_gold_armor");
+
+    public static final RegistryObject<Item> ANKY_DIAMOND_ARMOR = registerItem("anky_diamond_armor");
+
+    public static final RegistryObject<Item> ANKY_NETHERITE_ARMOR = registerItem("anky_netherite_armor");
+
+    //MARINE
+    public static final RegistryObject<Item> MARINE_IRON_ARMOR = registerItem("marine_iron_armor");
+
+    public static final RegistryObject<Item> MARINE_GOLD_ARMOR = registerItem("marine_gold_armor");
+
+    public static final RegistryObject<Item> MARINE_DIAMOND_ARMOR = registerItem("marine_diamond_armor");
+
+    public static final RegistryObject<Item> MARINE_NETHERITE_ARMOR = registerItem("marine_netherite_armor");
+
+
+    //STEGOSAURIN
+    public static final RegistryObject<Item> STEGOSAURIAN_IRON_ARMOR = registerItem("stegosaurian_iron_armor");
+
+    public static final RegistryObject<Item> STEGOSAURIAN_GOLD_ARMOR = registerItem("stegosaurian_gold_armor");
+
+    public static final RegistryObject<Item> STEGOSAURIAN_DIAMOND_ARMOR = registerItem("stegosaurian_diamond_armor");
+
+    public static final RegistryObject<Item> STEGOSAURIAN_NETHERITE_ARMOR = registerItem("stegosaurian_netherite_armor");
+
+
+    //CERATOPSIAN
+    public static final RegistryObject<Item> CERATOPSIAN_IRON_ARMOR = registerItem("ceratopsian_iron_armor");
+
+    public static final RegistryObject<Item> CERATOPSIAN_GOLD_ARMOR = registerItem("ceratopsian_gold_armor");
+
+    public static final RegistryObject<Item> CERATOPSIAN_DIAMOND_ARMOR = registerItem("ceratopsian_diamond_armor");
+
+    public static final RegistryObject<Item> CERATOPSIAN_NETHERITE_ARMOR = registerItem("ceratopsian_netherite_armor");
+
     //CERATOPIAN
     public static final RegistryObject<Item> CERATOPTIAN_DIAMOND_ARMOR = registerItem("ceratoptian_diamond_armor");
 
@@ -31,7 +74,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> CERATOPTIAN_NETHERITE_ARMOR = registerItem("ceratoptian_netherite_armor");
 
-    //SAUROPOD
+//SAUROPOD
     public static final RegistryObject<Item> SAUROPOD_GOLD_ARMOR = registerItem("sauropod_gold_armor");
 
     public static final RegistryObject<Item> SAUROPOD_IRON_ARMOR = registerItem("sauropod_iron_armor");
@@ -41,6 +84,10 @@ public class ModItems {
     public static final RegistryObject<Item> SAUROPOD_DIAMOND_ARMOR = registerItem("sauropod_diamond_armor");
 
     public static final RegistryObject<Item> SAUROPOD_SADDLE = registerItem("sauropod_saddle");
+
+    */
+
+
 
     //THEROPOD
 
@@ -58,49 +105,25 @@ public class ModItems {
 
 
 
-    //ANKY
-        public static final RegistryObject<Item> ANKY_IRON_ARMOR = registerItem("anky_iron_armor");
+    //ORNITHOPOD
+    public static final RegistryObject<Item> ORNITHOPOD_IRON_ARMOR = registerItem("ornithopod_iron_armor");
 
-    public static final RegistryObject<Item> ANKY_GOLD_ARMOR = registerItem("anky_gold_armor");
+    public static final RegistryObject<Item> ORNITHOPOD_LEATHER_ARMOR = registerItem("ornithopod_leather_armor");
 
-    public static final RegistryObject<Item> ANKY_DIAMOND_ARMOR = registerItem("anky_diamond_armor");
+    public static final RegistryObject<Item> ORNITHOPOD_GOLD_ARMOR = registerItem("ornithopod_gold_armor");
 
-    public static final RegistryObject<Item> ANKY_NETHERITE_ARMOR = registerItem("anky_netherite_armor");
+    public static final RegistryObject<Item> ORNITHOPOD_NETHERITE_ARMOR = registerItem("ornithopod_netherite_armor");
 
-    //MARINE
-        public static final RegistryObject<Item> MARINE_IRON_ARMOR = registerItem("marine_iron_armor");
-
-    public static final RegistryObject<Item> MARINE_GOLD_ARMOR = registerItem("marine_gold_armor");
-
-    public static final RegistryObject<Item> MARINE_DIAMOND_ARMOR = registerItem("marine_diamond_armor");
-
-    public static final RegistryObject<Item> MARINE_NETHERITE_ARMOR = registerItem("marine_netherite_armor");
+    public static final RegistryObject<Item> ORNITHOPOD_DIAMOND_ARMOR = registerItem("ornithopod_diamond_armor");
 
 
-    //STEGOSAURIN
-     public static final RegistryObject<Item> STEGOSAURIAN_IRON_ARMOR = registerItem("stegosaurian_iron_armor");
-
-    public static final RegistryObject<Item> STEGOSAURIAN_GOLD_ARMOR = registerItem("stegosaurian_gold_armor");
-
-    public static final RegistryObject<Item> STEGOSAURIAN_DIAMOND_ARMOR = registerItem("stegosaurian_diamond_armor");
-
-    public static final RegistryObject<Item> STEGOSAURIAN_NETHERITE_ARMOR = registerItem("stegosaurian_netherite_armor");
 
 
-    //CERATOPSIAN
-      public static final RegistryObject<Item> CERATOPSIAN_IRON_ARMOR = registerItem("ceratopsian_iron_armor");
 
-    public static final RegistryObject<Item> CERATOPSIAN_GOLD_ARMOR = registerItem("ceratopsian_gold_armor");
-
-    public static final RegistryObject<Item> CERATOPSIAN_DIAMOND_ARMOR = registerItem("ceratopsian_diamond_armor");
-
-    public static final RegistryObject<Item> CERATOPSIAN_NETHERITE_ARMOR = registerItem("ceratopsian_netherite_armor");
 
     public static final RegistryObject<Item> DINO_CHEST = registerItem("dino_chest");
 
     public static final RegistryObject<Item> PTERODACTYL_ELYTRA = registerItem("pterodactyl_elytra");
-
-
 
     /*
     END OF ARMOR
@@ -172,7 +195,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> DASPLETO_FRESH_TOOTH = registerItem("daspleto_fresh_tooth");
 
-    public static final RegistryObject<Item> THEROPOD_BONE = registerItem("theropod_bone");
+    public static final RegistryObject<Item> FOSSIL_THEROPOD_BONE = registerItem("fossil_theropod_bone");
 
 
 
