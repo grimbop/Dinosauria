@@ -2,18 +2,21 @@ package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.util.Registration;
-import net.minecraft.item.Food;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import org.lwjgl.system.CallbackI;
 
 import java.util.function.Supplier;
 
 public class ModItems {
+    //tools types for adding Tools Itens
+    enum TOOLTYPE{SHOVEL,PICKAXE,SWORD,AXE,HOE};
+
 
     /*
     ARMOR
@@ -242,7 +245,7 @@ public class ModItems {
             1, Effects.HUNGER, 300, 1, 0.2f);
 
     public static final RegistryObject<Item> SPICY_BREAD = registerInfectedFood("spicy_bread",
-            1, Effects.SPEED, 200, 1, 1);
+            4, Effects.SPEED, 200, 1, 1);
 
     /*
     END OF FOOD
@@ -252,10 +255,8 @@ public class ModItems {
 
 
     /*
-    MATERIALS
+    MATERIALS ITEMS
      */
-
-
 
     public static final RegistryObject<Item> SPICY_WHEAT = registerItem("spicy_wheat");
 
@@ -305,23 +306,187 @@ public class ModItems {
 
     }
 
-
     //fuction to register infectedFood
     public static <T extends Object> RegistryObject<Item> registerInfectedFood
-            (String nameOfItem, int hunger, Effect effects, int duration, int amplifier, float probability)   {
+    (String nameOfItem, int hunger, Effect effects, int duration, int amplifier, float probability)   {
 
         return Registration.ITEMS.register(nameOfItem,
                 () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)
                         .food(new Food.Builder()
-                        .hunger(Math.abs(hunger))//sets a absolute "hunger"
-                        .effect(() -> new EffectInstance(effects, duration, Math.min(amplifier,255)), probability)//set the type, duration, amplifier and probality
-                        .build())
-                            ));
+                                .hunger(Math.abs(hunger))//sets a absolute "hunger"
+                                .effect(() -> new EffectInstance(effects, duration, Math.min(amplifier,255)), probability)//set the type, duration, amplifier and probality
+                                .build())
+                ));
 
     }
 
 
-    //MATERIALS
+    // register a tool with default minecraft ItemTier, like diamond
+    public static RegistryObject<Item> registerTool(
+            String name, TOOLTYPE toolType, ItemTier itemTier, float attackDamage,
+            float attackSpeed, int defaultMaxDamage, int toolTypeLevel){
+
+
+        switch (toolType){
+
+            case SHOVEL:
+
+                return registerItem(name, () -> new ShovelItem(itemTier,
+                        attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.SHOVEL,toolTypeLevel).
+                                group(ItemGroup.TOOLS)));
+
+            case PICKAXE:
+
+                return registerItem(name, () -> new PickaxeItem(itemTier,
+                        (int)attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.PICKAXE,toolTypeLevel).
+                                group(ItemGroup.TOOLS)));
+
+            case SWORD:
+
+                return registerItem(name, () -> new SwordItem(itemTier,
+                        (int)attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).
+                                group(ItemGroup.COMBAT)));
+
+            case HOE:
+
+                return registerItem(name, () -> new HoeItem(itemTier,
+                        (int)attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.HOE,toolTypeLevel).
+                                group(ItemGroup.TOOLS)));
+
+            case AXE:
+
+                return registerItem(name, () -> new AxeItem(itemTier,
+                        attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.AXE,toolTypeLevel).
+                                group(ItemGroup.TOOLS)));
+
+            default:
+                return null;
+
+        }
+    }
+
+
+    // register a tool with mod ItemTier
+    public static RegistryObject<Item> registerTool(
+            String name, TOOLTYPE toolType, ModItemTier itemTier, float attackDamage,
+            float attackSpeed, int defaultMaxDamage, int toolTypeLevel){
+
+
+        switch (toolType){
+
+            case SHOVEL:
+
+                return registerItem(name, () -> new ShovelItem(itemTier,
+                        attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.SHOVEL,toolTypeLevel).
+                                group(ItemGroup.TOOLS)));
+
+            case PICKAXE:
+
+                return registerItem(name, () -> new PickaxeItem(itemTier,
+                        (int)attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.PICKAXE,toolTypeLevel).
+                                group(ItemGroup.TOOLS)));
+
+            case SWORD:
+
+                return registerItem(name, () -> new SwordItem(itemTier,
+                        (int)attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).
+                                group(ItemGroup.COMBAT)));
+
+            case HOE:
+
+                return registerItem(name, () -> new HoeItem(itemTier,
+                        (int)attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.HOE,toolTypeLevel).
+                                group(ItemGroup.TOOLS)));
+
+            case AXE:
+
+                return registerItem(name, () -> new AxeItem(itemTier,
+                        attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.AXE,toolTypeLevel).
+                                group(ItemGroup.TOOLS)));
+
+            default:
+                return null;
+
+        }
+    }
+
+
+    /*
+    END OF FUCTIONS
+     */
+
+
+
+
+    //ITEM TIER
+
+    //add a itemTier
+    public enum ModItemTier implements IItemTier {
+
+        THEROPOD(0, 0, 0, 0, 0,
+                null //add an item when created
+        ),
+        Ornithopod(0, 0, 0, 0, 0,
+                null //add an item when created
+        )
+        ;
+
+
+        private final int harvestLevel;
+        private final int maxUses;
+        private final float efficiency;
+        private final float attackDamage;
+        private final int enchantability;
+        private final Ingredient repairMaterial;
+
+        ModItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage,
+                    int enchantability, Ingredient repairMaterial) {
+            this.harvestLevel = harvestLevel;
+            this.maxUses = maxUses;
+            this.efficiency = efficiency;
+            this.attackDamage = attackDamage;
+            this.enchantability = enchantability;
+            this.repairMaterial = repairMaterial;
+        }
+
+
+        public int getMaxUses() {
+            return maxUses;
+        }
+
+        public float getEfficiency() {
+            return efficiency;
+        }
+
+        public float getAttackDamage() {
+            return attackDamage;
+        }
+
+        public int getHarvestLevel() {
+            return harvestLevel;
+        }
+
+        public int getEnchantability() {
+            return enchantability;
+        }
+
+        public Ingredient getRepairMaterial() {
+            return repairMaterial;
+        }
+
+    }
+
+
 
 
 
