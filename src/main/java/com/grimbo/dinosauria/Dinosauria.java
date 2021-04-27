@@ -1,10 +1,13 @@
 package com.grimbo.dinosauria;
 
 import com.grimbo.dinosauria.block.ModBlocks;
-import com.grimbo.dinosauria.entity.DilophosaurusEntity;
+import com.grimbo.dinosauria.entity.BalaurEntity;
 import com.grimbo.dinosauria.entity.ModEntityTypes;
-import com.grimbo.dinosauria.entity.render.DilophosaurusRender;
+import com.grimbo.dinosauria.entity.render.BalaurRenderer;
 import com.grimbo.dinosauria.item.ModItems;
+import com.grimbo.dinosauria.setup.ClientProxy;
+import com.grimbo.dinosauria.setup.IProxy;
+import com.grimbo.dinosauria.setup.ServerProxy;
 import com.grimbo.dinosauria.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -15,17 +18,24 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.spongepowered.asm.mixin.transformer.Config;
 import software.bernie.geckolib3.GeckoLib;
+import sun.misc.ObjectInputFilter;
 
 import java.util.stream.Collectors;
 
@@ -34,6 +44,7 @@ import java.util.stream.Collectors;
 public class Dinosauria
 {
     public static final String MOD_ID = "dinosauria";
+
     public static final ItemGroup DINOSAURIA = new ItemGroup("dinosauriaTab") {
         @Override
         public ItemStack createIcon() {
@@ -41,10 +52,21 @@ public class Dinosauria
         }
     };
 
+
+
+    public static IProxy proxy;
+
+
+
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
+
     public Dinosauria() {
+
+        proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> ServerProxy::new);
+
+
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         Registration.register();
         ModItems.register();
@@ -54,12 +76,18 @@ public class Dinosauria
         MinecraftForge.EVENT_BUS.register(this);
 
 
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+
+        //uncomment this if you are going to do inter-mod things
+        /*
         // Register the enqueueIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+       */
+
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
@@ -67,22 +95,33 @@ public class Dinosauria
 
     }
 
+
     private void setup(final FMLCommonSetupEvent event)
     {
 
-        event.enqueueWork(() -> {
-                    GlobalEntityTypeAttributes.put(ModEntityTypes.DILOPHOSAURUS.get(), DilophosaurusEntity.setCustomAttributes().create());
-                }
-        );
+        proxy.init();
+
+
+        DeferredWorkQueue.runLater(() -> {
+          GlobalEntityTypeAttributes.put(ModEntityTypes.BALAUR.get(), BalaurEntity.setCustomAttributes().create());
+        });
+
+
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
     }
+
+
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
+
+    //uncomment this if you are going to do inter-mod things
+    /*
 
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
@@ -103,6 +142,8 @@ public class Dinosauria
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+    */
+
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
@@ -114,4 +155,6 @@ public class Dinosauria
             LOGGER.info("HELLO from Register Block");
         }
     }
+
+
 }

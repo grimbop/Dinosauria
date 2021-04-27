@@ -2,15 +2,23 @@ package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.util.Registration;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeRegistry;
+import net.minecraft.world.biome.Biomes;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.lwjgl.system.CallbackI;
 
+import java.awt.*;
 import java.util.function.Supplier;
 
 public class ModItems {
@@ -105,7 +113,7 @@ public class ModItems {
 
 
 
-    //ORNITHOPOD
+    //ORNITHOPOD ==// need textures
     public static final RegistryObject<Item> ORNITHOPOD_IRON_ARMOR = registerItem("ornithopod_iron_armor");
 
     public static final RegistryObject<Item> ORNITHOPOD_LEATHER_ARMOR = registerItem("ornithopod_leather_armor");
@@ -195,6 +203,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> DASPLETO_FRESH_TOOTH = registerItem("daspleto_fresh_tooth");
 
+    // need texture
     public static final RegistryObject<Item> FOSSIL_THEROPOD_BONE = registerItem("fossil_theropod_bone");
 
 
@@ -273,8 +282,6 @@ public class ModItems {
     /*
     END OF FOOD
      */
-
-
 
 
     /*
