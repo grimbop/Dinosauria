@@ -117,8 +117,8 @@ public class DilophosaurusModel <T extends DilophosaurusEntity> extends EntityMo
         @Override
         public void setRotationAngles(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
         {
-            this.Head.rotateAngleX = headPitch * ((float)Math.PI / 180F);
-            this.Head.rotateAngleY = netHeadYaw * ((float)Math.PI / 180F);
+            this.Neck.rotateAngleX = headPitch * ((float)Math.PI / 180F);
+            this.Neck.rotateAngleY = netHeadYaw * ((float)Math.PI / 180F);
             //this.body.rotateAngleX = ((float)Math.PI / 2F);
             this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
             this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;

@@ -82,7 +82,7 @@ public class BalaurEntity extends AnimalEntity {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new SwimGoal(this));
-       // this.goalSelector.addGoal(1, new PanicGoal(this, 0.7D));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 0.7D));
         this.goalSelector.addGoal(2, new BreedGoal(this, 0.5D));
         this.goalSelector.addGoal(3, new FollowParentGoal(this, 0.5D));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 0.5D));
