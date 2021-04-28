@@ -9,12 +9,15 @@ import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
 
+import java.*;
+
 public class DilophosaurusRenderer extends MobRenderer<DilophosaurusEntity, DilophosaurusModel<DilophosaurusEntity>> {
 
 
     public DilophosaurusRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn, new DilophosaurusModel<>(), 1f);
     }
+
 
     @Override
     public ResourceLocation getEntityTexture(DilophosaurusEntity entity) {

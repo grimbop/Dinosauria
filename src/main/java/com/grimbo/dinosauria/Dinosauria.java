@@ -110,7 +110,7 @@ public class Dinosauria
           GlobalEntityTypeAttributes.put(ModEntityTypes.BALAUR.get(), BalaurEntity.setCustomAttributes().create());
 
           GlobalEntityTypeAttributes.put(ModEntityTypes.DILOPHOSAURUS.get(), DilophosaurusEntity.setCustomAttributes().create());
-          
+
 
         });
 

@@ -22,7 +22,7 @@ public class ModEntityTypes {
 
     public static final RegistryObject<EntityType<DilophosaurusEntity>> DILOPHOSAURUS = Registration.ENTITIES.register("dilophosaurus",
             () -> EntityType.Builder.create(DilophosaurusEntity::new , EntityClassification.CREATURE)
-                    .size(1f, 1f)
+                    .size(1.2f, 2f)
                     .build(new ResourceLocation(Dinosauria.MOD_ID + "dilophosaurus").toString()));
 
 

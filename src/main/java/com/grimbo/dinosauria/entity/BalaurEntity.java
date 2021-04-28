@@ -34,7 +34,7 @@ public class BalaurEntity extends AnimalEntity {
     {
         return MobEntity.func_233666_p_().
                 createMutableAttribute(Attributes.MAX_HEALTH, 50)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 10f);
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3D);
 
 
     }
@@ -82,10 +82,10 @@ public class BalaurEntity extends AnimalEntity {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new SwimGoal(this));
-        this.goalSelector.addGoal(1, new PanicGoal(this, 0.7D));
-        this.goalSelector.addGoal(2, new BreedGoal(this, 0.8D));
-        this.goalSelector.addGoal(3, new FollowParentGoal(this, 0.8D));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 0.8D));
+       // this.goalSelector.addGoal(1, new PanicGoal(this, 0.7D));
+        this.goalSelector.addGoal(2, new BreedGoal(this, 0.5D));
+        this.goalSelector.addGoal(3, new FollowParentGoal(this, 0.5D));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 0.5D));
         this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 3.0F));
         this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
     }
