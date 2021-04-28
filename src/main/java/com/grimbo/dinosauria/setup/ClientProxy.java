@@ -3,6 +3,7 @@ package com.grimbo.dinosauria.setup;
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.entity.ModEntityTypes;
 import com.grimbo.dinosauria.entity.render.BalaurRenderer;
+import com.grimbo.dinosauria.entity.render.DilophosaurusRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,6 +18,8 @@ public class ClientProxy implements IProxy{
     public void init()
     {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BALAUR.get(), BalaurRenderer::new);
+
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.DILOPHOSAURUS.get(), DilophosaurusRenderer::new);
 
 
     }

@@ -15,9 +15,15 @@ public class ModEntityTypes {
 
 
     public static final RegistryObject<EntityType<BalaurEntity>> BALAUR = Registration.ENTITIES.register("balaur",
-            () -> EntityType.Builder.create(BalaurEntity::new , EntityClassification.MONSTER)
+            () -> EntityType.Builder.create(BalaurEntity::new , EntityClassification.CREATURE)
     .size(1f, 1f)
     .build(new ResourceLocation(Dinosauria.MOD_ID + "balaur").toString()));
+
+
+    public static final RegistryObject<EntityType<DilophosaurusEntity>> DILOPHOSAURUS = Registration.ENTITIES.register("dilophosaurus",
+            () -> EntityType.Builder.create(DilophosaurusEntity::new , EntityClassification.CREATURE)
+                    .size(1f, 1f)
+                    .build(new ResourceLocation(Dinosauria.MOD_ID + "dilophosaurus").toString()));
 
 
 

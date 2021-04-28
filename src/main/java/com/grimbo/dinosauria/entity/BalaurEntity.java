@@ -7,13 +7,13 @@ import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -29,18 +29,28 @@ public class BalaurEntity extends AnimalEntity {
         super(type, worldIn);
     }
 
+
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
         return MobEntity.func_233666_p_().
                 createMutableAttribute(Attributes.MAX_HEALTH, 50)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3f);
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 10f);
 
 
     }
 
 
 
-    //==SOUNDS==\\
+    /* drops
+    @Nullable
+    @Override
+    public ItemEntity entityDropItem(IItemProvider itemIn) {
+        return super.entityDropItem(itemIn);
+    }
+    */
+
+
+//==SOUNDS==\\
 
     @Nullable
     @Override
@@ -65,17 +75,18 @@ public class BalaurEntity extends AnimalEntity {
         this.playSound(SoundEvents.ENTITY_COW_STEP, 1, 1);
     }
 
+
     //==GOALS==\\
 
     @Override
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new SwimGoal(this));
-        this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
-        this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(3, new FollowParentGoal(this, 1.1D));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
-        this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 0.7D));
+        this.goalSelector.addGoal(2, new BreedGoal(this, 0.8D));
+        this.goalSelector.addGoal(3, new FollowParentGoal(this, 0.8D));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 0.8D));
+        this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 3.0F));
         this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
     }
 

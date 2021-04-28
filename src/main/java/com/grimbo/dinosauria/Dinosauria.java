@@ -2,6 +2,7 @@ package com.grimbo.dinosauria;
 
 import com.grimbo.dinosauria.block.ModBlocks;
 import com.grimbo.dinosauria.entity.BalaurEntity;
+import com.grimbo.dinosauria.entity.DilophosaurusEntity;
 import com.grimbo.dinosauria.entity.ModEntityTypes;
 import com.grimbo.dinosauria.entity.render.BalaurRenderer;
 import com.grimbo.dinosauria.item.ModItems;
@@ -11,6 +12,8 @@ import com.grimbo.dinosauria.setup.ServerProxy;
 import com.grimbo.dinosauria.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -103,7 +106,12 @@ public class Dinosauria
 
 
         DeferredWorkQueue.runLater(() -> {
+
           GlobalEntityTypeAttributes.put(ModEntityTypes.BALAUR.get(), BalaurEntity.setCustomAttributes().create());
+
+          GlobalEntityTypeAttributes.put(ModEntityTypes.DILOPHOSAURUS.get(), DilophosaurusEntity.setCustomAttributes().create());
+          
+
         });
 
 
