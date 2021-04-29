@@ -27,7 +27,7 @@ public class DilophosaurusRenderer extends MobRenderer<DilophosaurusEntity, Dilo
 
     @Override
     public ResourceLocation getEntityTexture(DilophosaurusEntity entity) {
-        return new ResourceLocation(Dinosauria.MOD_ID, "textures/entity/dilophosaurus.png");
+        return new ResourceLocation(Dinosauria.MOD_ID, entity.DiloSetVariation);
     }
 
 

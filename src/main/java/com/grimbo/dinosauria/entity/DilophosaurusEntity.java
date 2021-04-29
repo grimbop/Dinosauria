@@ -1,7 +1,9 @@
 package com.grimbo.dinosauria.entity;
 
+import com.google.common.collect.Maps;
 import com.google.gson.internal.bind.JsonTreeReader;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
@@ -10,18 +12,25 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.item.DyeColor;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class DilophosaurusEntity extends AnimalEntity {
+    String[] DiloVariations = {"textures/entity/dilophosaurus_var1.png","textures/entity/dilophosaurus_var2.png"
+    ,"textures/entity/dilophosaurus_var3.png","textures/entity/dilophosaurus_var4.png"};
+
+    int variationsNumber = 4;
+
+    public String DiloSetVariation = DiloVariations[rand.nextInt(variationsNumber-1)];
 
 
     protected DilophosaurusEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
@@ -36,6 +45,8 @@ public class DilophosaurusEntity extends AnimalEntity {
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3D);
 
     }
+
+
 
     /* drops
     @Nullable
