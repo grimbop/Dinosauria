@@ -297,7 +297,6 @@ public class ModItems {
 
 
 
-
     //fuctions
     public static void register() {}
 
@@ -401,6 +400,7 @@ public class ModItems {
     }
 
 
+
     // register a tool with mod ItemTier
     public static RegistryObject<Item> registerTool(
             String name, TOOLTYPE toolType, ModItemTier itemTier, float attackDamage,
@@ -448,6 +448,8 @@ public class ModItems {
                 return null;
 
         }
+
+
     }
 
 

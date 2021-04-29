@@ -1,5 +1,6 @@
 package com.grimbo.dinosauria.entity;
 
+import com.google.gson.internal.bind.JsonTreeReader;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
@@ -17,6 +18,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
+import java.awt.*;
+import java.util.function.Supplier;
 
 public class DilophosaurusEntity extends AnimalEntity {
 
@@ -29,7 +32,7 @@ public class DilophosaurusEntity extends AnimalEntity {
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
         return MobEntity.func_233666_p_().
-                createMutableAttribute(Attributes.MAX_HEALTH, 50)
+                createMutableAttribute(Attributes.MAX_HEALTH, 20)
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3D);
 
     }

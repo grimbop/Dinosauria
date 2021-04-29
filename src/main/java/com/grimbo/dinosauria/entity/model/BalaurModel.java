@@ -1,5 +1,6 @@
 package com.grimbo.dinosauria.entity.model;
 
+import com.google.common.collect.ImmutableList;
 import com.grimbo.dinosauria.entity.BalaurEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -16,8 +17,8 @@ public class BalaurModel<T extends BalaurEntity> extends EntityModel<T>
     private final ModelRenderer neck;
     private final ModelRenderer head;
     private final ModelRenderer jaw;
-    private final ModelRenderer arm1;
-    private final ModelRenderer arm2;
+    private final ModelRenderer leftWing;
+    private final ModelRenderer rightWing;
     private final ModelRenderer tail;
     private final ModelRenderer tailpart1;
     private final ModelRenderer leg1;
@@ -57,17 +58,17 @@ public class BalaurModel<T extends BalaurEntity> extends EntityModel<T>
         head.addChild(jaw);
 
 
-        arm1 = new ModelRenderer(this);
-        arm1.setRotationPoint(3.0F, 0.75F, -3.75F);
-        body.addChild(arm1);
-        arm1.setTextureOffset(38, 32).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 6.0F, 4.0F, 0.0F, false);
-        arm1.setTextureOffset(0, 8).addBox(1.0F, 5.0F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, false);
+        leftWing = new ModelRenderer(this);
+        leftWing.setRotationPoint(3.0F, 0.75F, -3.75F);
+        body.addChild(leftWing);
+        leftWing.setTextureOffset(38, 32).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 6.0F, 4.0F, 0.0F, false);
+        leftWing.setTextureOffset(0, 8).addBox(1.0F, 5.0F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, false);
 
-        arm2 = new ModelRenderer(this);
-        arm2.setRotationPoint(-3.0F, 0.75F, -3.75F);
-        body.addChild(arm2);
-        arm2.setTextureOffset(26, 32).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 6.0F, 4.0F, 0.0F, false);
-        arm2.setTextureOffset(5, 7).addBox(-1.0F, 5.0F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, false);
+        rightWing = new ModelRenderer(this);
+        rightWing.setRotationPoint(-3.0F, 0.75F, -3.75F);
+        body.addChild(rightWing);
+        rightWing.setTextureOffset(26, 32).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 6.0F, 4.0F, 0.0F, false);
+        rightWing.setTextureOffset(5, 7).addBox(-1.0F, 5.0F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, false);
 
         tail = new ModelRenderer(this);
         tail.setRotationPoint(0.0F, 0.75F, 5.25F);
@@ -124,17 +125,26 @@ public class BalaurModel<T extends BalaurEntity> extends EntityModel<T>
         cube_r4.setRotationPoint(-1.0F, 0.0F, 0.0F);
         claws2.addChild(cube_r4);
         setRotationAngle(cube_r4, 0.0F, 0.0F, -1.5708F);
-        cube_r4.setTextureOffset(6, 0).addBox(0.0F, 0.0F, -0.5F, 2.0F, 0.0F, 1.0F, 0.0F, false);}
+        cube_r4.setTextureOffset(6, 0).addBox(0.0F, 0.0F, -0.5F, 2.0F, 0.0F, 1.0F, 0.0F, false);
+    }
+
+
+
+    protected Iterable<ModelRenderer> getBodyParts() {
+        return ImmutableList.of(this.body, leg2, this.leg1, this.rightWing, this.leftWing);
+    }
+
 
     @Override
     public void setRotationAngles(T entity , float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
         this.neck.rotateAngleX = headPitch * ((float)Math.PI / 180F);
         this.neck.rotateAngleY = netHeadYaw * ((float)Math.PI / 180F);
-        //this.body.rotateAngleX = ((float)Math.PI / 2F);
         this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
         this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
 
     }
+
+
 
     @Override
     public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){

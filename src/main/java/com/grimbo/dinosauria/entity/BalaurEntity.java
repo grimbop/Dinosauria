@@ -15,6 +15,8 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import software.bernie.geckolib3.GeckoLib;
@@ -23,6 +25,14 @@ import javax.annotation.Nullable;
 import javax.naming.directory.AttributeModificationException;
 
 public class BalaurEntity extends AnimalEntity {
+
+    public float wingRotation;
+    public float destPos;
+    public float oFlapSpeed;
+    public float oFlap;
+    public float wingRotDelta = 1.0F;
+
+
 
 
     protected BalaurEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
@@ -33,7 +43,7 @@ public class BalaurEntity extends AnimalEntity {
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
         return MobEntity.func_233666_p_().
-                createMutableAttribute(Attributes.MAX_HEALTH, 50)
+                createMutableAttribute(Attributes.MAX_HEALTH, 8)
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3D);
 
 
@@ -48,6 +58,28 @@ public class BalaurEntity extends AnimalEntity {
         return super.entityDropItem(itemIn);
     }
     */
+
+    public void livingTick() {
+        super.livingTick();
+        this.oFlap = this.wingRotation;
+        this.oFlapSpeed = this.destPos;
+        this.destPos = (float)((double)this.destPos + (double)(this.onGround ? -1 : 4) * 0.3D);
+        this.destPos = MathHelper.clamp(this.destPos, 0.0F, 1.0F);
+        if (!this.onGround && this.wingRotDelta < 1.0F) {
+            this.wingRotDelta = 1.0F;
+        }
+
+        this.wingRotDelta = (float)((double)this.wingRotDelta * 0.9D);
+        Vector3d vector3d = this.getMotion();
+        if (!this.onGround && vector3d.y < 0.0D) {
+            this.setMotion(vector3d.mul(1.0D, 0.6D, 1.0D));
+        }
+
+        this.wingRotation += this.wingRotDelta * 2.0F;
+
+
+    }
+
 
 
 //==SOUNDS==\\
