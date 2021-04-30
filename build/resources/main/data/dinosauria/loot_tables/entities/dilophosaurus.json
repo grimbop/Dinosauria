@@ -13,8 +13,20 @@
             }
           ],
           "name": "dinosauria:theropod_tooth"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.7
+            }
+          ],
+          "name": "dinosauria:dilophosaurus_skull"
 
         }
+
+
       ]
     }
   ]

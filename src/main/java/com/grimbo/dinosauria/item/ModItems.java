@@ -205,6 +205,9 @@ public class ModItems {
     public static final RegistryObject<Item> BALAUR_SKULL = registerItem("balaur_skull",
             () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
 
+    public static final RegistryObject<Item> DILOPHOSAURUS_SKULL = registerItem("dilophosaurus_skull",
+            () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
+
 
 
     /*
