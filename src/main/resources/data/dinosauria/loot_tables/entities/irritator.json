@@ -40,7 +40,7 @@
             "conditions":[
               {
                 "condition": "random_chance",
-                "chance": 0.99
+                "chance": 0.03
               }
             ],
             "name": "dinosauria:irritator_skull"
