@@ -2,7 +2,7 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": 1,
+      "rolls": 2,
         "entries": [
           {
             "type": "minecraft:item",
@@ -19,7 +19,7 @@
             "conditions":[
               {
                 "condition": "random_chance",
-                "chance": 0.5
+                "chance": 0.05
               }
             ],
             "name": "dinosauria:balaur_skull"

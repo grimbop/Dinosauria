@@ -200,7 +200,8 @@ public class ModItems {
     // need texture
     public static final RegistryObject<Item> FOSSIL_THEROPOD_BONE = registerItem("fossil_theropod_bone");
 
-    public static final RegistryObject<Item> BALAUR_SKULL = registerItem("balaur_skull");
+    public static final RegistryObject<Item> BALAUR_SKULL = registerItem("balaur_skull",
+            () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
 
 
 
