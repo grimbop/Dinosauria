@@ -2,12 +2,14 @@ package com.grimbo.dinosauria.entity;
 
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.util.Registration;
+import net.minecraft.client.resources.data.AnimationFrame;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
 
 
 public class ModEntityTypes {

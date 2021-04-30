@@ -27,6 +27,7 @@ public class IrritatorEntity extends AnimalEntity {
     }
 
 
+
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
         return MobEntity.func_233666_p_().

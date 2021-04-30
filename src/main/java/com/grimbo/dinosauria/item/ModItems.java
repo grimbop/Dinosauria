@@ -1,6 +1,7 @@
 package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
+import com.grimbo.dinosauria.item.ToolTip_items.DromaeosaurMaterialBalaur;
 import com.grimbo.dinosauria.util.Registration;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
@@ -8,6 +9,7 @@ import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.function.Supplier;
@@ -205,7 +207,6 @@ public class ModItems {
 
 
 
-
     /*
     END OF BONES
      */
@@ -292,6 +293,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> THEROPOD_TOOTH = registerItem("theropod_tooth");
 
+    public static final RegistryObject<Item> SPINOSAURID_TOOTH = registerItem("spinosaurid_tooth");
+
     public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
     () -> new DromaeosaurMaterialBalaur());
 
@@ -357,6 +360,7 @@ public class ModItems {
                 ));
 
     }
+
 
 
     // register a tool with default minecraft ItemTier, like diamond

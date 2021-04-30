@@ -1,4 +1,4 @@
-package com.grimbo.dinosauria.item;
+package com.grimbo.dinosauria.item.ToolTip_items;
 
 import com.grimbo.dinosauria.Dinosauria;
 import net.minecraft.client.util.ITooltipFlag;
@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 
 import java.util.List;
 
@@ -14,8 +15,6 @@ public class DromaeosaurMaterialBalaur extends Item {
 
     public DromaeosaurMaterialBalaur() {
         super(new Properties().group(Dinosauria.DINOSAURIA));
-
-
     }
 
     @Override
@@ -23,5 +22,8 @@ public class DromaeosaurMaterialBalaur extends Item {
         tooltip.add(new StringTextComponent("\u00A76"+"Balaur" + "\u00A76"));
 
     }
+
+
+
 
 }
