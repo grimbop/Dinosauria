@@ -152,6 +152,7 @@ public class ModItems {
     BONES
      */
 
+    /*
     public static final RegistryObject<Item> DASPLETO_FOSSIL_SKULL = registerItem("daspleto_fossil_skull");
 
     public static final RegistryObject<Item> DASPLETO_FRESH_SKULL = registerItem("daspleto_fresh_skull");
@@ -194,8 +195,13 @@ public class ModItems {
 
     public static final RegistryObject<Item> DASPLETO_FRESH_TOOTH = registerItem("daspleto_fresh_tooth");
 
+     */
+
     // need texture
     public static final RegistryObject<Item> FOSSIL_THEROPOD_BONE = registerItem("fossil_theropod_bone");
+
+    public static final RegistryObject<Item> BALAUR_SKULL = registerItem("balaur_skull");
+
 
 
 
@@ -281,6 +287,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> SPICY_WHEAT = registerItem("spicy_wheat");
 
+    public static final RegistryObject<Item> BALAUR_FEATHER = registerItem("balaur_feather");
 
     public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
     () -> new DromaeosaurMaterialBalaur());

@@ -73,10 +73,17 @@
   "item.dinosauria.spicy_wheat": "Spicy Wheat",
   "item.dinosauria.dromaeosaur_material_balaur": "Dromaeosaur Material",
 
+
+
   "block.dinosauria.daspletosaurus_skull": "Daspletosaurus Skull",
 
 
+
   "entity.dinosauria.dilophosaurus": "Dilophosaurus",
+  "entity.dinosauria.irritator": "Irritator",
+  "entity.dinosauria.monolophosaurus": "Monolophosaurus",
+  "entity.dinosauria.balaur": "Balaur",
+
 
 
   "itemGroup.dinosauriaTab": "Dinosauria"

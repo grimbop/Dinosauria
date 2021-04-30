@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions":[
+              {
+              "condition": "random_chance",
+              "chance": 0.6
+            }
+          ],
+            "name": "dinosauria:balaur_feather"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions":[
+              {
+                "condition": "random_chance",
+                "chance": 0.05
+              }
+            ],
+            "name": "dinosauria:balaur_skull"
+
+          }
+
+        ]
+    }
+  ]
+}
