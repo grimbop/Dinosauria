@@ -19,7 +19,7 @@
           "conditions":[
             {
               "condition": "random_chance",
-              "chance": 0.7
+              "chance": 0.03
             }
           ],
           "name": "dinosauria:dilophosaurus_skull"

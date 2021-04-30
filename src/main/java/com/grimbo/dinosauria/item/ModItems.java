@@ -2,6 +2,7 @@ package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.item.ToolTip_items.DromaeosaurMaterialBalaur;
+import com.grimbo.dinosauria.item.ToolTip_items.SpinosaurMaterialIrritator;
 import com.grimbo.dinosauria.util.Registration;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
@@ -300,6 +301,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
     () -> new DromaeosaurMaterialBalaur());
+
+    public static final RegistryObject<Item> SPINOSAUR_MATERIAL_IRRITATOR = registerItem("spinosaur_material_irritator",
+    () -> new SpinosaurMaterialIrritator());
 
     /*
     END OF MATERIALS

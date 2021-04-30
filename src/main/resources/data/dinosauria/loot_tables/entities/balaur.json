@@ -24,6 +24,17 @@
             ],
             "name": "dinosauria:balaur_skull"
 
+          },
+          {
+            "type": "minecraft:item",
+            "conditions":[
+              {
+                "condition": "random_chance",
+                "chance": 0.08
+              }
+            ],
+            "name": "dinosauria:dromaeosaur_material_balaur"
+
           }
 
         ]
