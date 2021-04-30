@@ -34,6 +34,17 @@
             ],
             "name": "dinosauria:spinosaur_material_irritator"
 
+          },
+          {
+            "type": "minecraft:item",
+            "conditions":[
+              {
+                "condition": "random_chance",
+                "chance": 0.99
+              }
+            ],
+            "name": "dinosauria:irritator_skull"
+
           }
 
         ]
