@@ -97,7 +97,9 @@ public class Dinosauria
 
           GlobalEntityTypeAttributes.put(ModEntityTypes.IRRITATOR.get(), IrritatorEntity.setCustomAttributes().create());
 
-            GlobalEntityTypeAttributes.put(ModEntityTypes.MONOLOPHOSAURUS.get(), MonolophosaurusEntity.setCustomAttributes().create());
+          GlobalEntityTypeAttributes.put(ModEntityTypes.MONOLOPHOSAURUS.get(), MonolophosaurusEntity.setCustomAttributes().create());
+
+          GlobalEntityTypeAttributes.put(ModEntityTypes.DRYOSAURUS.get(), DryosaurusEntity.setCustomAttributes().create());
         });
 
 

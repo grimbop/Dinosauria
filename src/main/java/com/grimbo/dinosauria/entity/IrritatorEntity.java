@@ -37,17 +37,6 @@ public class IrritatorEntity extends AnimalEntity {
 
     }
 
-
-
-    /* drops
-    @Nullable
-    @Override
-    public ItemEntity entityDropItem(IItemProvider itemIn) {
-        return super.entityDropItem(itemIn);
-    }
-    */
-
-
 //==SOUNDS==\\
 
     @Nullable

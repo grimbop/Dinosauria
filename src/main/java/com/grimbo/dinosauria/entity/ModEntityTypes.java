@@ -42,6 +42,10 @@ public class ModEntityTypes {
     .build(new ResourceLocation(Dinosauria.MOD_ID + "monolophosaurus").toString()));
 
 
+    public static final RegistryObject<EntityType<DryosaurusEntity>> DRYOSAURUS = Registration.ENTITIES.register("dryosaurus",
+            () -> EntityType.Builder.create(DryosaurusEntity::new , EntityClassification.MONSTER)
+                    .size(1.35F, 1.8F)
+                    .build(new ResourceLocation(Dinosauria.MOD_ID + "dryosaurus").toString()));
 
 
     public static void register() {

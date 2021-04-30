@@ -90,7 +90,7 @@ public class MonolophosaurusEntity extends AnimalEntity {
     @Nullable
     @Override
     public AgeableEntity func_241840_a(ServerWorld p_241840_1_, AgeableEntity p_241840_2_) {
-        return ModEntityTypes.IRRITATOR.get().create(this.world);
+        return ModEntityTypes.MONOLOPHOSAURUS.get().create(this.world);
     }
 
 

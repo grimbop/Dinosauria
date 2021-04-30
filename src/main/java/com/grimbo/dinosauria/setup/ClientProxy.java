@@ -1,12 +1,10 @@
 package com.grimbo.dinosauria.setup;
 
 import com.grimbo.dinosauria.Dinosauria;
+import com.grimbo.dinosauria.entity.DryosaurusEntity;
 import com.grimbo.dinosauria.entity.IrritatorEntity;
 import com.grimbo.dinosauria.entity.ModEntityTypes;
-import com.grimbo.dinosauria.entity.render.BalaurRenderer;
-import com.grimbo.dinosauria.entity.render.DilophosaurusRenderer;
-import com.grimbo.dinosauria.entity.render.IrritatorRenderer;
-import com.grimbo.dinosauria.entity.render.MonolophosaurusRenderer;
+import com.grimbo.dinosauria.entity.render.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,6 +25,10 @@ public class ClientProxy implements IProxy{
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.IRRITATOR.get(), IrritatorRenderer::new);
 
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.MONOLOPHOSAURUS.get(), MonolophosaurusRenderer::new);
+
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.DRYOSAURUS.get(), DryosaurusRenderer::new);
+
+
     }
 
     @Override
