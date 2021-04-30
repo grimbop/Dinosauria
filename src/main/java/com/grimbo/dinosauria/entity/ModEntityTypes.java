@@ -27,10 +27,12 @@ public class ModEntityTypes {
                     .size(1.5f, 2f)
                     .build(new ResourceLocation(Dinosauria.MOD_ID + "dilophosaurus").toString()));
 
+
     public static final RegistryObject<EntityType<IrritatorEntity>> IRRITATOR = Registration.ENTITIES.register("irritator",
             () -> EntityType.Builder.create(IrritatorEntity::new , EntityClassification.MONSTER)
                     .size(2f, 2f)
                     .build(new ResourceLocation(Dinosauria.MOD_ID + "irritator").toString()));
+
 
     public static final RegistryObject<EntityType<MonolophosaurusEntity>> MONOLOPHOSAURUS = Registration.ENTITIES.register("monolophosaurus",
     () -> EntityType.Builder.create(MonolophosaurusEntity::new , EntityClassification.MONSTER)

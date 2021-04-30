@@ -290,6 +290,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> BALAUR_FEATHER = registerItem("balaur_feather");
 
+    public static final RegistryObject<Item> THEROPOD_TOOTH = registerItem("theropod_tooth");
+
     public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
     () -> new DromaeosaurMaterialBalaur());
 
