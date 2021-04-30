@@ -2,23 +2,14 @@ package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.util.Registration;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeRegistry;
-import net.minecraft.world.biome.Biomes;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistryEntry;
-import org.lwjgl.system.CallbackI;
 
-import java.awt.*;
 import java.util.function.Supplier;
 
 public class ModItems {
@@ -234,10 +225,9 @@ public class ModItems {
 
 
 
-
-    /*
+    /**
     TOOLS
-     */
+     **/
 
     /*
     END OD TOOLS
@@ -246,9 +236,9 @@ public class ModItems {
 
 
 
-    /*
+    /**
     WEAPONS
-     */
+    **/
 
     /*
     END OF WEAPONS
@@ -257,7 +247,7 @@ public class ModItems {
 
 
 
-    /*
+    /**
     FOOD
      */
     public static final RegistryObject<Item> BURGER = registerFood("burger", 8, 2);
@@ -284,11 +274,16 @@ public class ModItems {
      */
 
 
-    /*
+
+    /**
     MATERIALS ITEMS
      */
 
     public static final RegistryObject<Item> SPICY_WHEAT = registerItem("spicy_wheat");
+
+
+    public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
+    () -> new DromaeosaurMaterialBalaur());
 
     /*
     END OF MATERIALS
@@ -297,7 +292,11 @@ public class ModItems {
 
 
 
-    //fuctions
+
+    /** fuctions
+
+    **/
+
     public static void register() {}
 
 

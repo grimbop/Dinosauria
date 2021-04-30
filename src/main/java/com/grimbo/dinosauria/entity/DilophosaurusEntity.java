@@ -2,6 +2,7 @@ package com.grimbo.dinosauria.entity;
 
 import com.google.common.collect.Maps;
 import com.google.gson.internal.bind.JsonTreeReader;
+import com.grimbo.dinosauria.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.AgeableEntity;
@@ -10,6 +11,7 @@ import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.DyeColor;
@@ -27,11 +29,7 @@ import java.util.function.Supplier;
 public class DilophosaurusEntity extends AnimalEntity {
     String[] DiloVariations = {"textures/entity/dilophosaurus_var1.png","textures/entity/dilophosaurus_var2.png"
     ,"textures/entity/dilophosaurus_var3.png","textures/entity/dilophosaurus_var4.png"};
-
-    int variationsNumber = 4;
-
-    public String DiloSetVariation = DiloVariations[rand.nextInt(variationsNumber-1)];
-
+    public String DiloSetVariation = DiloVariations[rand.nextInt(DiloVariations.length-1)];
 
     protected DilophosaurusEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
@@ -46,18 +44,15 @@ public class DilophosaurusEntity extends AnimalEntity {
 
     }
 
-
-
-    /* drops
     @Nullable
     @Override
     public ItemEntity entityDropItem(IItemProvider itemIn) {
-        return super.entityDropItem(itemIn);
+        return super.entityDropItem(ModItems.BURGER.get());
+
     }
-    */
 
 
-//==SOUNDS==\\
+    //==SOUNDS==\\
 
     @Nullable
     @Override
