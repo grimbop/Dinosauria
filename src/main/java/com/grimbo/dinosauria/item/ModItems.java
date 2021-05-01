@@ -275,6 +275,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> COOKED_FISH_MEAT = registerFood("cooked_fish_meat", 5, 1.5f);
 
+    public static final RegistryObject<Item> RAW_PLATYKOTTA = registerFood("raw_platykotta", 2, 1f);
+
+    public static final RegistryObject<Item> COOKED_PLATYKOTTA = registerFood("cooked_platykotta", 8, 2f);
+
     public static final RegistryObject<Item> RAW_THIGH = registerInfectedFood("raw_thigh",
             1, Effects.HUNGER, 300, 1, 0.2f);
 

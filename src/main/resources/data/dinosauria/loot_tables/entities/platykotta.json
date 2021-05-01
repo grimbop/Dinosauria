@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.9
+            }
+          ],
+          "name": "dinosauria:raw_platykotta"
+        }
+
+      ]
+    }
+  ]
+}
