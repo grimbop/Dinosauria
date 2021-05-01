@@ -48,6 +48,11 @@ public class ModEntityTypes {
                     .build(new ResourceLocation(Dinosauria.MOD_ID + "dryosaurus").toString()));
 
 
+    public static final RegistryObject<EntityType<PlatykottaEntity>> PLATYKOTTA = Registration.ENTITIES.register("platykotta",
+            () -> EntityType.Builder.create(PlatykottaEntity::new , EntityClassification.WATER_AMBIENT)
+                    .size(0.35F, 0.35F)
+                    .build(new ResourceLocation(Dinosauria.MOD_ID + "platykotta").toString()));
+
     public static void register() {
     }
 

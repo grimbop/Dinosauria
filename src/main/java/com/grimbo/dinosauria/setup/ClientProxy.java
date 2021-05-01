@@ -28,6 +28,8 @@ public class ClientProxy implements IProxy{
 
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.DRYOSAURUS.get(), DryosaurusRenderer::new);
 
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.PLATYKOTTA.get(), PlatykottaRenderer::new);
+
 
     }
 

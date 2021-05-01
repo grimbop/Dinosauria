@@ -13,11 +13,11 @@ public class DryosaurusRenderer extends MobRenderer<DryosaurusEntity, Dryosaurus
 
 
     public DryosaurusRenderer(EntityRendererManager renderManagerIn) {
-        super(renderManagerIn, new DryosaurusModel<>(), 0.5f);
+        super(renderManagerIn, new DryosaurusModel<>(), 0.75f);
     }
 
     @Override
     public ResourceLocation getEntityTexture(DryosaurusEntity entity) {
-        return new ResourceLocation(Dinosauria.MOD_ID, "textures/entity/dryosaurus_plains.png");
+        return new ResourceLocation(Dinosauria.MOD_ID, entity.DryoSetVariation);
     }
 }
