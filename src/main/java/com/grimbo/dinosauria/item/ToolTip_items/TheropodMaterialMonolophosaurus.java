@@ -18,7 +18,7 @@ public class TheropodMaterialMonolophosaurus extends Item {
 
     @Override
     public void addInformation(ItemStack stack, World world, List<ITextComponent> tooltip, ITooltipFlag flag){
-        tooltip.add(new StringTextComponent("\u00A78"+"Monolophosaurus" + "\u00A78"));
+        tooltip.add(new StringTextComponent("\u00A79"+"Monolophosaurus" + "\u00A79"));
 
     }
 
