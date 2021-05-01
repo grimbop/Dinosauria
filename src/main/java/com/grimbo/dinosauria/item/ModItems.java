@@ -312,6 +312,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SPINOSAURID_TOOTH = registerItem("spinosaurid_tooth");
 
+    public static final RegistryObject<Item> WOODEN_RING = registerItem("wooden_ring",
+     () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
+
     public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
     () -> new DromaeosaurMaterialBalaur());
 
