@@ -45,7 +45,7 @@ public class PlatykottaEntity extends WaterMobEntity {
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
         return MobEntity.func_233666_p_().
-                createMutableAttribute(Attributes.MAX_HEALTH, 8)
+                createMutableAttribute(Attributes.MAX_HEALTH, 2)
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3D);
     }
 

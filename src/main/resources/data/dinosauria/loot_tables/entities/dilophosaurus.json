@@ -24,6 +24,26 @@
           ],
           "name": "dinosauria:dilophosaurus_skull"
 
+        },
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.4
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 3.0,
+                "max": 7.0
+              }
+            }
+          ],
+          "name": "dinosauria:theropod_material_dilophosaurus"
+
         }
 
 

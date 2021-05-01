@@ -13,6 +13,26 @@
               }
             ],
             "name": "dinosauria:dryosaurus_skull"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions":[
+              {
+                "condition": "random_chance",
+                "chance": 0.4
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 2.0,
+                  "max": 5.0
+                }
+              }
+            ],
+            "name": "dinosauria:ornithopod_material_dryosaurus"
+
           }
 
 

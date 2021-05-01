@@ -1,8 +1,7 @@
 package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
-import com.grimbo.dinosauria.item.ToolTip_items.DromaeosaurMaterialBalaur;
-import com.grimbo.dinosauria.item.ToolTip_items.SpinosaurMaterialIrritator;
+import com.grimbo.dinosauria.item.ToolTip_items.*;
 import com.grimbo.dinosauria.util.Registration;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
@@ -322,11 +321,25 @@ public class ModItems {
 
     public static final RegistryObject<Item> WOODEN_RING = registerItem("wooden_ring", 1);
 
+    /** dino materials
+     *
+     */
+
     public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
     () -> new DromaeosaurMaterialBalaur());
 
     public static final RegistryObject<Item> SPINOSAUR_MATERIAL_IRRITATOR = registerItem("spinosaur_material_irritator",
     () -> new SpinosaurMaterialIrritator());
+
+    public static final RegistryObject<Item> THEROPOD_MATERIAL_DILOPHOSAURUS = registerItem("theropod_material_dilophosaurus",
+    () -> new TheropodMaterialDilophosaurus());
+
+    public static final RegistryObject<Item> THEROPOD_MATERIAL_MONOLOPHOSAURUS = registerItem("theropod_material_monolophosaurus",
+    () -> new TheropodMaterialMonolophosaurus());
+
+    public static final RegistryObject<Item> ORNITHOPOD_MATERIAL_DRYOSAURUS = registerItem("ornithopod_material_dryosaurus",
+    () -> new OrnithopodMaterialDryosaurus());
+
 
     /*
     END OF MATERIALS
