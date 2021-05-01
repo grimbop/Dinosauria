@@ -38,13 +38,13 @@ public class ModEntityTypes {
 
     public static final RegistryObject<EntityType<MonolophosaurusEntity>> MONOLOPHOSAURUS = Registration.ENTITIES.register("monolophosaurus",
     () -> EntityType.Builder.create(MonolophosaurusEntity::new , EntityClassification.MONSTER)
-    .size(2.5F, 3F)
+    .size(2.5F, 1.5F)
     .build(new ResourceLocation(Dinosauria.MOD_ID + "monolophosaurus").toString()));
 
 
     public static final RegistryObject<EntityType<DryosaurusEntity>> DRYOSAURUS = Registration.ENTITIES.register("dryosaurus",
             () -> EntityType.Builder.create(DryosaurusEntity::new , EntityClassification.MONSTER)
-                    .size(1.35F, 1.8F)
+                    .size(1.35F, 1.5F)
                     .build(new ResourceLocation(Dinosauria.MOD_ID + "dryosaurus").toString()));
 
 

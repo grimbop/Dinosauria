@@ -33,6 +33,15 @@
                 "chance": 0.08
               }
             ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 1.0,
+                  "max": 3.0
+                }
+              }
+            ],
             "name": "dinosauria:dromaeosaur_material_balaur"
 
           }
