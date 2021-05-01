@@ -14,7 +14,8 @@ import software.bernie.geckolib3.core.builder.AnimationBuilder;
 
 public class ModEntityTypes {
 
-    public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Dinosauria.MOD_ID);
+    public static DeferredRegister<EntityType<?>> ENTITY_TYPES =
+            DeferredRegister.create(ForgeRegistries.ENTITIES, Dinosauria.MOD_ID);
 
 
 
