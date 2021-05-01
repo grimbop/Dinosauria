@@ -21,7 +21,7 @@ public class ModItems {
 
 
     /*
-    ARMOR
+    DINO_ARMOR
      */
 
     /*
@@ -128,8 +128,20 @@ public class ModItems {
     public static final RegistryObject<Item> PTERODACTYL_ELYTRA = registerItem("pterodactyl_elytra");
 
     /*
+    END OF DINO_ARMOR
+     */
+
+    /*
+    ARMOR
+     */
+
+    //place "registerArmor" after models
+    public static final RegistryObject<Item> BALAUR_FEATRER_CROW = registerItem("balaur_feather_crown", 1);
+
+    /*
     END OF ARMOR
      */
+
 
 
 
@@ -200,23 +212,19 @@ public class ModItems {
 
      */
 
+
     // need texture
     public static final RegistryObject<Item> FOSSIL_THEROPOD_BONE = registerItem("fossil_theropod_bone");
 
-    public static final RegistryObject<Item> BALAUR_SKULL = registerItem("balaur_skull",
-            () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
+    public static final RegistryObject<Item> BALAUR_SKULL = registerItem("balaur_skull", 1);
 
-    public static final RegistryObject<Item> DILOPHOSAURUS_SKULL = registerItem("dilophosaurus_skull",
-            () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
+    public static final RegistryObject<Item> DILOPHOSAURUS_SKULL = registerItem("dilophosaurus_skull", 1);
 
-    public static final RegistryObject<Item> IRRITATOR_SKULL = registerItem("irritator_skull",
-            () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
+    public static final RegistryObject<Item> IRRITATOR_SKULL = registerItem("irritator_skull", 1);
 
-    public static final RegistryObject<Item> DRYOSAURUS_SKULL = registerItem("dryosaurus_skull",
-            () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
+    public static final RegistryObject<Item> DRYOSAURUS_SKULL = registerItem("dryosaurus_skull", 1);
 
-    public static final RegistryObject<Item> MONOLOPHOSAURUS_SKULL = registerItem("monolophosaurus_skull",
-            () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
+    public static final RegistryObject<Item> MONOLOPHOSAURUS_SKULL = registerItem("monolophosaurus_skull", 1);
 
 
 
@@ -312,8 +320,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> SPINOSAURID_TOOTH = registerItem("spinosaurid_tooth");
 
-    public static final RegistryObject<Item> WOODEN_RING = registerItem("wooden_ring",
-     () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(1)));
+    public static final RegistryObject<Item> WOODEN_RING = registerItem("wooden_ring", 1);
 
     public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
     () -> new DromaeosaurMaterialBalaur());
@@ -324,8 +331,6 @@ public class ModItems {
     /*
     END OF MATERIALS
      */
-
-
 
 
 
@@ -358,6 +363,12 @@ public class ModItems {
         return Registration.ITEMS.register(nameOfItem, supplier);
     }
 
+    public static <T extends Item> RegistryObject<Item> registerItem (String nameOfItem, int maxStackSize)   {
+
+        return Registration.ITEMS.register(nameOfItem,
+                () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(maxStackSize)));
+    }
+
 
     //function to register food
     public static RegistryObject<Item> registerFood (String nameOfItem, int hunger, float saturation)   {
@@ -369,6 +380,7 @@ public class ModItems {
                         group( Dinosauria.DINOSAURIA).group( ItemGroup.FOOD) ));//set group
 
     }
+
 
     //fuction to register infectedFood
     public static <T extends Object> RegistryObject<Item> registerInfectedFood
