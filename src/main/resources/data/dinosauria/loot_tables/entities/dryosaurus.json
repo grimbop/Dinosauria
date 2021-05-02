@@ -33,9 +33,26 @@
             ],
             "name": "dinosauria:ornithopod_material_dryosaurus"
 
+          },
+          {
+            "type": "minecraft:item",
+            "conditions":[
+              {
+                "condition": "random_chance",
+                "chance": 0.2
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 1.0,
+                  "max": 3.0
+                }
+              }
+            ],
+            "name": "dinosauria:dryosaurus_quill"
           }
-
-
         ]
     }
   ]

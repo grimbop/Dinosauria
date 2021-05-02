@@ -65,14 +65,14 @@ public class IrritatorModel<T extends IrritatorEntity> extends EntityModel<T>
         Head.setTextureOffset(0, 0).addBox(-1.0F, -5.0F, -9.0F, 3.0F, 3.0F, 2.0F, 0.0F, false);
         Head.setTextureOffset(45, 60).addBox(-2.0F, -2.0F, -24.0F, 5.0F, 5.0F, 16.0F, 0.0F, false);
         Head.setTextureOffset(134, 55).addBox(-2.0F, 2.0F, -24.0F, 5.0F, 0.0F, 16.0F, 0.0F, false);
-        Head.setTextureOffset(0, 127).addBox(-1.5F, 1.0F, -23.6F, 4.0F, 4.0F, 16.0F, 0.0F, false);
+
 
         Jaw = new ModelRenderer(this);
         Jaw.setRotationPoint(0.0F, 3.0F, 0.4F);
         Head.addChild(Jaw);
         Jaw.setTextureOffset(77, 83).addBox(-3.0F, -1.0F, -8.4F, 7.0F, 3.0F, 9.0F, 0.0F, false);
-        Jaw.setTextureOffset(72, 66).addBox(-1.7F, -1.0F, -24.2F, 4.0F, 2.0F, 15.0F, 0.0F, false);
-        Jaw.setTextureOffset(0, 103).addBox(-0.7F, -4.4F, -23.2F, 2.0F, 4.0F, 14.0F, 0.0F, false);
+        Jaw.setTextureOffset(72, 66).addBox(-1.5F, -1.0F, -24.2F, 4.0F, 2.0F, 15.0F, 0.0F, false);
+        Jaw.setTextureOffset(0, 103).addBox(-0.7F, -4.4F, -22.2F, 2.0F, 4.0F, 14.0F, 0.0F, false);
 
         Neckbaloon = new ModelRenderer(this);
         Neckbaloon.setRotationPoint(0.0F, -9.0F, -6.5F);
@@ -120,6 +120,7 @@ public class IrritatorModel<T extends IrritatorEntity> extends EntityModel<T>
         Feet2.setRotationPoint(0.0F, 11.1F, -2.8F);
         Knee2.addChild(Feet2);
         Feet2.setTextureOffset(68, 19).addBox(-3.0F, -1.1F, -5.0F, 6.0F, 3.0F, 7.0F, 0.0F, true);
+
     }
 
     @Override

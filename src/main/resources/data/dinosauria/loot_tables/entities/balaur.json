@@ -12,6 +12,15 @@
               "chance": 0.6
             }
           ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 1.0,
+                  "max": 3.0
+                }
+              }
+            ],
             "name": "dinosauria:balaur_feather"
           },
           {

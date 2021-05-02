@@ -90,7 +90,7 @@ public class ModItems {
 
 
 
-    //THEROPOD
+    //THEROPOD ARMOR
 
     public static final RegistryObject<Item> THEROPOD_IRON_ARMOR = registerItem("theropod_iron_armor");
 
@@ -107,6 +107,7 @@ public class ModItems {
 
 
     //ORNITHOPOD ==// need textures
+    /*
     public static final RegistryObject<Item> ORNITHOPOD_IRON_ARMOR = registerItem("ornithopod_iron_armor");
 
     public static final RegistryObject<Item> ORNITHOPOD_LEATHER_ARMOR = registerItem("ornithopod_leather_armor");
@@ -116,8 +117,7 @@ public class ModItems {
     public static final RegistryObject<Item> ORNITHOPOD_NETHERITE_ARMOR = registerItem("ornithopod_netherite_armor");
 
     public static final RegistryObject<Item> ORNITHOPOD_DIAMOND_ARMOR = registerItem("ornithopod_diamond_armor");
-
-
+    */
 
 
 
@@ -130,12 +130,15 @@ public class ModItems {
     END OF DINO_ARMOR
      */
 
+
     /*
     ARMOR
      */
 
     //place "registerArmor" after models
     public static final RegistryObject<Item> BALAUR_FEATRER_CROW = registerItem("balaur_feather_crown", 1);
+
+    public static final RegistryObject<Item> DRYOSAURUS_QUILL_CROWN = registerItem("dryosaurus_quill_crown", 1);
 
     /*
     END OF ARMOR
@@ -211,9 +214,8 @@ public class ModItems {
 
      */
 
-
-    // need texture
-    public static final RegistryObject<Item> FOSSIL_THEROPOD_BONE = registerItem("fossil_theropod_bone");
+    // NEED TEXTURE
+   //public static final RegistryObject<Item> FOSSIL_THEROPOD_BONE = registerItem("fossil_theropod_bone");
 
     public static final RegistryObject<Item> BALAUR_SKULL = registerItem("balaur_skull", 1);
 
@@ -314,6 +316,8 @@ public class ModItems {
     public static final RegistryObject<Item> SPICY_WHEAT = registerItem("spicy_wheat");
 
     public static final RegistryObject<Item> BALAUR_FEATHER = registerItem("balaur_feather");
+
+    public static final RegistryObject<Item> DRYOSAURUS_QUILL = registerItem("dryosaurus_quill");
 
     public static final RegistryObject<Item> THEROPOD_TOOTH = registerItem("theropod_tooth");
 

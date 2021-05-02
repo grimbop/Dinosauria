@@ -16,7 +16,13 @@ public class MonolophosaurusModel<T extends MonolophosaurusEntity> extends Entit
     private final ModelRenderer Tail2;
     private final ModelRenderer Neck;
     private final ModelRenderer Head;
+    private final ModelRenderer bone;
+    private final ModelRenderer cube_r1;
+    private final ModelRenderer bone2;
     private final ModelRenderer Jaw;
+    private final ModelRenderer Jaw2;
+    private final ModelRenderer bone3;
+    private final ModelRenderer cube_r2;
     private final ModelRenderer Arm1;
     private final ModelRenderer Arm2;
     private final ModelRenderer Leg1;
@@ -58,17 +64,44 @@ public class MonolophosaurusModel<T extends MonolophosaurusEntity> extends Entit
         Head.setRotationPoint(0.0F, -9.1F, -1.7F);
         Neck.addChild(Head);
         Head.setTextureOffset(44, 49).addBox(-4.0F, -2.0F, -4.0F, 9.0F, 5.0F, 4.0F, 0.0F, false);
-        Head.setTextureOffset(0, 0).addBox(-3.0F, -2.0F, -14.0F, 7.0F, 6.0F, 10.0F, 0.0F, false);
-        Head.setTextureOffset(94, 96).addBox(-2.0F, 1.899F, -13.2F, 5.0F, 4.0F, 9.0F, 0.0F, false);
-        Head.setTextureOffset(8, 0).addBox(-3.0F, 3.0F, -14.0F, 7.0F, 0.0F, 10.0F, 0.0F, false);
-        Head.setTextureOffset(80, 49).addBox(-3.0F, -6.0F, -14.0F, 7.0F, 4.0F, 12.0F, 0.0F, false);
+
+        bone = new ModelRenderer(this);
+        bone.setRotationPoint(0.0F, 0.0F, 0.0F);
+        Head.addChild(bone);
+        bone.setTextureOffset(0, 0).addBox(-3.0F, -2.0F, -14.0F, 7.0F, 6.0F, 10.0F, 0.0F, false);
+        bone.setTextureOffset(8, 0).addBox(-3.0F, 3.0F, -14.0F, 7.0F, 0.0F, 10.0F, 0.0F, false);
+
+        cube_r1 = new ModelRenderer(this);
+        cube_r1.setRotationPoint(4.0F, 2.0F, -1.0F);
+        bone.addChild(cube_r1);
+        setRotationAngle(cube_r1, 0.0F, 0.0F, -3.1416F);
+        cube_r1.setTextureOffset(98, 12).addBox(1.1F, -2.2F, -11.9F, 4.0F, 2.0F, 8.0F, 0.0F, false);
+
+        bone2 = new ModelRenderer(this);
+        bone2.setRotationPoint(0.0F, 0.0F, -0.7F);
+        Head.addChild(bone2);
+        bone2.setTextureOffset(80, 49).addBox(-3.0F, -6.0F, -13.3F, 7.0F, 4.0F, 12.0F, 0.0F, false);
 
         Jaw = new ModelRenderer(this);
         Jaw.setRotationPoint(0.0F, 4.4F, -0.8F);
         Head.addChild(Jaw);
         Jaw.setTextureOffset(13, 89).addBox(-4.0F, -1.4F, -3.2F, 9.0F, 3.0F, 4.0F, 0.0F, false);
-        Jaw.setTextureOffset(98, 26).addBox(-2.9F, -1.4F, -13.1F, 6.0F, 2.0F, 9.0F, 0.0F, false);
-        Jaw.setTextureOffset(98, 12).addBox(-1.9F, -2.6F, -12.1F, 4.0F, 2.0F, 8.0F, 0.0F, false);
+
+        Jaw2 = new ModelRenderer(this);
+        Jaw2.setRotationPoint(3.9F, -5.5F, -0.7F);
+        Jaw.addChild(Jaw2);
+        Jaw2.setTextureOffset(98, 26).addBox(-6.8F, 4.1F, -12.3F, 6.0F, 2.0F, 9.0F, 0.0F, false);
+
+        bone3 = new ModelRenderer(this);
+        bone3.setRotationPoint(-3.9F, 0.899F, 1.8F);
+        Jaw2.addChild(bone3);
+
+
+        cube_r2 = new ModelRenderer(this);
+        cube_r2.setRotationPoint(0.0F, 0.0F, 0.0F);
+        bone3.addChild(cube_r2);
+        setRotationAngle(cube_r2, 0.0F, 0.0F, -3.1416F);
+        cube_r2.setTextureOffset(94, 96).addBox(-3.0F, -3.899F, -13.3F, 5.0F, 4.0F, 9.0F, 0.0F, false);
 
         Arm1 = new ModelRenderer(this);
         Arm1.setRotationPoint(6.0F, 5.0F, -20.0F);
@@ -94,7 +127,7 @@ public class MonolophosaurusModel<T extends MonolophosaurusEntity> extends Entit
         Knee1.setTextureOffset(0, 22).addBox(-1.5F, 9.0F, -4.9F, 5.0F, 2.0F, 5.0F, 0.0F, false);
 
         Leg2 = new ModelRenderer(this);
-        Leg2.setRotationPoint(-7.0F, -18.0F, 0.0F);
+        Leg2.setRotationPoint(-6.0F, -18.0F, 0.0F);
         Monolophosaurus.addChild(Leg2);
         Leg2.setTextureOffset(61, 0).addBox(-2.0F, -6.0F, -7.0F, 7.0F, 14.0F, 11.0F, 0.0F, true);
 

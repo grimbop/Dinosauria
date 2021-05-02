@@ -33,7 +33,7 @@ public class ModEntityTypes {
 
     public static final RegistryObject<EntityType<IrritatorEntity>> IRRITATOR = Registration.ENTITIES.register("irritator",
             () -> EntityType.Builder.create(IrritatorEntity::new , EntityClassification.MONSTER)
-                    .size(2f, 2f)
+                    .size(2.5f, 2f)
                     .build(new ResourceLocation(Dinosauria.MOD_ID + "irritator").toString()));
 
 

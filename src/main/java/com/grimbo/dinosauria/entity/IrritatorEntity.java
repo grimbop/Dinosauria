@@ -68,13 +68,13 @@ public class IrritatorEntity extends AnimalEntity {
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(0, new SwimGoal(this));
-        this.goalSelector.addGoal(1, new PanicGoal(this, 0.7D));
-        this.goalSelector.addGoal(2, new BreedGoal(this, 0.5D));
-        this.goalSelector.addGoal(3, new FollowParentGoal(this, 0.5D));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 0.5D));
-        this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 3.0F));
-        this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new PanicGoal(this, 0.7D));
+      this.goalSelector.addGoal(2, new BreedGoal(this, 0.5D));
+      this.goalSelector.addGoal(3, new FollowParentGoal(this, 0.5D));
+      this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 0.5D));
+      this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 3.0F));
+      this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
     }
 
 
