@@ -52,6 +52,26 @@
               }
             ],
             "name": "dinosauria:dryosaurus_quill"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions":[
+              {
+                "condition": "random_chance",
+                "chance": 0.5
+              }
+            ],
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "min": 2.0,
+                  "max": 4.0
+                }
+              }
+            ],
+            "name": "dinosauria:ornithopod_bone"
+
           }
         ]
     }

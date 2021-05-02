@@ -69,6 +69,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> THEROPOD_BONE = registerItem("theropod_bone");
 
+    public static final RegistryObject<Item> SPINOSAUR_BONE = registerItem("spinosaur_bone");
+
+    public static final RegistryObject<Item> ORNITHOPOD_BONE = registerItem("ornithopod_bone");
+
+    public static final RegistryObject<Item> DROMAEOSAUR_BONE = registerItem("dromaeosaur_bone");
+
 
     /** Skulls
      *
