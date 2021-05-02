@@ -74,6 +74,29 @@
         ],
         "name": "dinosauria:theropod_bone"
       }]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.7
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2.0,
+                "max": 4.0
+              }
+            }
+          ],
+          "name": "dinosauria:raw_theropod_meat"
+        }]
     }
   ]
 }

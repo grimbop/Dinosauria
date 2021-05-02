@@ -117,6 +117,24 @@ public class ModItems {
 
     public static final RegistryObject<Item> COOKED_PLATYKOTTA = registerFood("cooked_platykotta", 8, 2f);
 
+    public static final RegistryObject<Item> RAW_THEROPOD_MEAT = registerFood("raw_theropod_meat", 4, 1f);
+
+    public static final RegistryObject<Item> COOKED_THEROPOD_MEAT = registerFood("cooked_theropod_meat", 10, 2f);
+
+    public static final RegistryObject<Item> RAW_SPINOSAUR_MEAT = registerFood("raw_spinosaur_meat", 5, 1f);
+
+    public static final RegistryObject<Item> COOKED_SPINOSAUR_MEAT = registerFood("cooked_spinosaur_meat", 11, 2f);
+
+    public static final RegistryObject<Item> RAW_DROMAEOSAUR_MEAT = registerInfectedFood("raw_dromaeosaur_meat",
+            2, Effects.HUNGER, 140, 1, 0.115F);
+
+    public static final RegistryObject<Item> COOKED_DROMAEOSAUR_MEAT = registerFood("cookeed_dromaeosaur_meat", 8, 2f);
+
+    public static final RegistryObject<Item> RAW_ORNITHOPOD_MEAT = registerFood("raw_ornithopod_meat", 5, 1f);
+
+    public static final RegistryObject<Item> COOKED_ORNITHOPOD_MEAT = registerFood("cookeed_ornithopod_meat", 12, 2f);
+
+
     public static final RegistryObject<Item> SPICY_BREAD = registerInfectedFood("spicy_bread",
             4, Effects.SPEED, 200, 1, 1);
 

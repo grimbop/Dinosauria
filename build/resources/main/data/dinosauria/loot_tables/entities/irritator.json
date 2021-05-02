@@ -76,8 +76,30 @@
           "name": "dinosauria:spinosaur_bone"
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.6
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2.0,
+                "max": 5.0
+              }
+            }
+          ],
+          "name": "dinosauria:raw_spinosaur_meat"
+        }]
     }
-
 
   ]
 
