@@ -48,11 +48,11 @@ public class ModItems {
     BOOKS
      */
 
-    public static final RegistryObject<Item> OLD_PAPER = registerItem("old_paper");
+    //public static final RegistryObject<Item> OLD_PAPER = registerItem("old_paper");
 
-    public static final RegistryObject<Item> LORE_BOOK = registerItem("lore_book");
+    //public static final RegistryObject<Item> LORE_BOOK = registerItem("lore_book");
 
-    public static final RegistryObject<Item> DINOSAURIA_GUIDE_BOOK = registerItem("dinosauria_guide_book");
+    //public static final RegistryObject<Item> DINOSAURIA_GUIDE_BOOK = registerItem("dinosauria_guide_book");
 
 
     /*
