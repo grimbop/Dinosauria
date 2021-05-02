@@ -3,79 +3,82 @@
   "pools": [
     {
       "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
+      "entries": [{
+          "type": "minecraft:item",
+          "conditions": [
+            {
               "condition": "random_chance",
               "chance": 0.6
             }
           ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 3.0
-                }
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0
               }
-            ],
-            "name": "dinosauria:balaur_feather"
-          },
+            }
+          ],
+          "name": "dinosauria:balaur_feather"
+        }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "conditions": [
           {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.05
-              }
-            ],
-            "name": "dinosauria:balaur_skull"
-
-          },
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.08
-              }
-            ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 3.0
-                }
-              }
-            ],
-            "name": "dinosauria:dromaeosaur_material_balaur"
-
-          },
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.5
-              }
-            ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 3.0
-                }
-              }
-            ],
-            "name": "dinosauria:dromaeosaur_bone"
-
+            "condition": "random_chance",
+            "chance": 0.05
           }
-
-        ]
+        ],
+        "name": "dinosauria:balaur_skull"
+      }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "conditions": [
+          {
+            "condition": "random_chance",
+            "chance": 0.08
+          }
+        ],
+        "functions": [
+          {
+            "function": "minecraft:set_count",
+            "count": {
+              "min": 1.0,
+              "max": 3.0
+            }
+          }
+        ],
+        "name": "dinosauria:dromaeosaur_material_balaur"
+      }]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+        "type": "minecraft:item",
+        "conditions": [{
+            "condition": "random_chance",
+            "chance": 0.5
+          }
+        ],
+        "functions": [
+          {
+            "function": "minecraft:set_count",
+            "count": {
+              "min": 1.0,
+              "max": 3.0
+            }
+          }
+        ],
+        "name": "dinosauria:dromaeosaur_bone"
+      }]
     }
   ]
 }

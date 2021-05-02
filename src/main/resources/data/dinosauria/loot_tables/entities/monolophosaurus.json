@@ -3,70 +3,79 @@
   "pools": [
     {
       "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
               "condition": "random_chance",
               "chance": 0.2
             }
           ],
-            "name": "dinosauria:theropod_tooth"
+          "name": "dinosauria:theropod_tooth"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.05
+            }
+          ],
+          "name": "dinosauria:monolophosaurus_skull"
 
-          },
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.05
+        }]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.5
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2.0,
+                "max": 5.0
               }
-            ],
-            "name": "dinosauria:monolophosaurus_skull"
-
-          },
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.5
+            }
+          ],
+          "name": "dinosauria:theropod_material_monolophosaurus"
+        }]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.3
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 4.0,
+                "max": 6.0
               }
-            ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 2.0,
-                  "max": 5.0
-                }
-              }
-            ],
-            "name": "dinosauria:theropod_material_monolophosaurus"
-
-          },
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.3
-              }
-            ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 4.0,
-                  "max": 6.0
-                }
-              }
-            ],
-            "name": "dinosauria:theropod_bone"
-
-          }
-        ]
+            }
+          ],
+          "name": "dinosauria:theropod_bone"
+        }]
     }
   ]
 }

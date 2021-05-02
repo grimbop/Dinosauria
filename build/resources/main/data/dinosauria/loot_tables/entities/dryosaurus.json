@@ -3,77 +3,89 @@
   "pools": [
     {
       "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.05
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "random_chance",
+              "chance": 0.05
+            }
+          ],
+          "name": "dinosauria:dryosaurus_skull"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.4
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2.0,
+                "max": 5.0
               }
-            ],
-            "name": "dinosauria:dryosaurus_skull"
-          },
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.4
-              }
-            ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 2.0,
-                  "max": 5.0
-                }
-              }
-            ],
-            "name": "dinosauria:ornithopod_material_dryosaurus"
+            }
+          ],
+          "name": "dinosauria:ornithopod_material_dryosaurus"
 
-          },
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.2
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.2
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0
               }
-            ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 1.0,
-                  "max": 3.0
-                }
+            }
+          ],
+          "name": "dinosauria:dryosaurus_quill"
+        }]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.5
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2.0,
+                "max": 4.0
               }
-            ],
-            "name": "dinosauria:dryosaurus_quill"
-          },
-          {
-            "type": "minecraft:item",
-            "conditions":[
-              {
-                "condition": "random_chance",
-                "chance": 0.5
-              }
-            ],
-            "functions": [
-              {
-                "function": "minecraft:set_count",
-                "count": {
-                  "min": 2.0,
-                  "max": 4.0
-                }
-              }
-            ],
-            "name": "dinosauria:ornithopod_bone"
-
-          }
-        ]
+            }
+          ],
+          "name": "dinosauria:ornithopod_bone"
+        }]
     }
   ]
 }

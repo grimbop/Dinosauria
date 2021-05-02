@@ -110,7 +110,7 @@
       <command value="gradlew build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Dinosauria [build]">
+  <component name="RunManager" selected="Gradle.Dinosauria [runClient]">
     <configuration name="Dinosauria [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -176,8 +176,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Dinosauria [build]" />
         <item itemvalue="Gradle.Dinosauria [runClient]" />
+        <item itemvalue="Gradle.Dinosauria [build]" />
         <item itemvalue="Gradle.Dinosauria [jar]" />
       </list>
     </recent_temporary>
