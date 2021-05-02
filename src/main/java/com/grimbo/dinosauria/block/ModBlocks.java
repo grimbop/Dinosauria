@@ -17,8 +17,6 @@ import java.util.function.Supplier;
 import static com.grimbo.dinosauria.Dinosauria.DINOSAURIA;
 
 public class ModBlocks {
-    public static final RegistryObject<Block> DASPLETOSAURUS_SKULL = register("daspletosaurus_skull",
-            () -> new DaspletosaurusSkull(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(4f).harvestTool(ToolType.PICKAXE)));
 
 
     public static void register() {}

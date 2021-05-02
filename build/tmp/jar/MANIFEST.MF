@@ -3,7 +3,7 @@ Implementation-Title: Dinosauria
 Implementation-Version: 0.12
 Specification-Vendor: dinosauriasareus
 Specification-Title: dinosauria
-Implementation-Timestamp: 2021-05-01T21:38:09-0300
+Implementation-Timestamp: 2021-05-02T00:03:28-0300
 Specification-Version: 1
 Implementation-Vendor: dinosauriasareus
 
