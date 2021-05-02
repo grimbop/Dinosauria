@@ -51,6 +51,11 @@ public class DilophosaurusEntity extends AnimalEntity {
 
     }
 
+    @Override
+    public int getMaxAir() {
+        return 140;
+    }
+
 
     //==SOUNDS==\\
 

@@ -36,14 +36,12 @@ public class MonolophosaurusEntity extends AnimalEntity {
     }
 
 
-
-    /* drops
-    @Nullable
     @Override
-    public ItemEntity entityDropItem(IItemProvider itemIn) {
-        return super.entityDropItem(itemIn);
+    public int getMaxAir() {
+        return 140;
     }
-    */
+
+
 
 
 //==SOUNDS==\\

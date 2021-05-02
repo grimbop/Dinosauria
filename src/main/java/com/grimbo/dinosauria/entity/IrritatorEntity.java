@@ -37,7 +37,13 @@ public class IrritatorEntity extends AnimalEntity {
 
     }
 
-//==SOUNDS==\\
+    @Override
+    public int getMaxAir() {
+        return 340;
+    }
+
+
+    //==SOUNDS==\\
 
     @Nullable
     @Override
@@ -61,6 +67,8 @@ public class IrritatorEntity extends AnimalEntity {
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
         this.playSound(SoundEvents.ENTITY_COW_STEP, 1, 1);
     }
+
+
 
 
     //==GOALS==\\

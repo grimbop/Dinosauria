@@ -57,6 +57,10 @@ public class DryosaurusEntity extends AnimalEntity {
         return DryoVariation[i];
     }
 
+    @Override
+    public int getMaxAir() {
+        return 140;
+    }
 
 
 //==SOUNDS==\\
