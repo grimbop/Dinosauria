@@ -40,7 +40,7 @@ public class Dinosauria
     public static final ItemGroup DINOSAURIA = new ItemGroup("dinosauriaTab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ModItems.COOKED_EGG.get());
+            return new ItemStack(ModItems.DILOPHOSAURUS_SKULL.get());
         }
     };
 
