@@ -83,19 +83,10 @@
           "conditions":[
             {
               "condition": "random_chance",
-              "chance": 0.7
+              "chance": 0.03
             }
           ],
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2.0,
-                "max": 4.0
-              }
-            }
-          ],
-          "name": "dinosauria:raw_theropod_meat"
+          "name": "dinosauria:dilophosaurus_crest_trophy"
         }]
     }
   ]

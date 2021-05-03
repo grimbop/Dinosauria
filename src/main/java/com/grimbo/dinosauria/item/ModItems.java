@@ -43,6 +43,15 @@ public class ModItems {
 
 
 
+    /*
+    TROPHY
+     */
+
+    public static final RegistryObject<Item> DILOPHOSAURUS_CREST_TROPHY = registerItem("dilophosaurus_crest_trophy");
+
+    public static final RegistryObject<Item> MONOLOPHOSAURUS_CREST_TROPHY = registerItem("monolophosaurus_crest_trophy");
+
+
 
     /*
     BOOKS

@@ -99,6 +99,20 @@
           ],
           "name": "dinosauria:raw_theropod_meat"
         }]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions":[
+            {
+              "condition": "random_chance",
+              "chance": 0.03
+            }
+          ],
+          "name": "dinosauria:monolophosaurus_crest_trophy"
+        }]
     }
   ]
 }
