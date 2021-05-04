@@ -14,8 +14,10 @@ import net.minecraft.util.LazyValue;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.world.StructureSpawnListGatherEvent;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class ModItems {
     //tools types for adding Tools Itens
@@ -82,15 +84,10 @@ public class ModItems {
 
 
 
-    public static final RegistryObject<Item> THEROPOD_TOOTH_KNIFE =
-            Registration.ITEMS.register("theropod_tooth_knife",
-                    () -> new AxeItem(ItemTier.THEROPOD, 5, -2f,
-                            new Item.Properties().defaultMaxDamage(150).group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> THEROPOD_TOOTH_KNIFE = Registration.ITEMS.register("theropod_tooth_knife", () -> new AxeItem(ItemTier.THEROPOD, 4, -1.8f, new Item.Properties().defaultMaxDamage(150).group(Dinosauria.DINOSAURIA)));
 
-    public static final RegistryObject<Item> SPINOSAUR_TOOTH_SPEAR =
-            Registration.ITEMS.register("spinosaur_tooth_spear",
-                    () -> new AxeItem(ItemTier.THEROPOD, 5, -3.3f,
-                            new Item.Properties().defaultMaxDamage(150).group(Dinosauria.DINOSAURIA)));
+    public static final RegistryObject<Item> SPINOSAUR_TOOTH_SPEAR = Registration.ITEMS.register("spinosaur_tooth_spear", () -> new AxeItem(ModItems.ItemTier.SPINOSAUR, 4, -2.5f, new Item.Properties().defaultMaxDamage(150).group(Dinosauria.DINOSAURIA)));
+
 
 
 
@@ -337,8 +334,11 @@ public class ModItems {
     //add a itemTier
     public enum ItemTier implements IItemTier {
         THEROPOD(1, 245, 1.0F, 0.0F, 15, () -> {
-            return Ingredient.fromTag(ItemTags.PLANKS);
+            return Ingredient.fromStacks(new ItemStack(ModItems.THEROPOD_BONE.get()));
         }),
+        SPINOSAUR(1, 273, 1.0F, 0.5F, 15, () -> {
+            return Ingredient.fromStacks(new ItemStack(ModItems.SPINOSAUR_BONE.get()));
+        })
         ;
 
         private final int harvestLevel;

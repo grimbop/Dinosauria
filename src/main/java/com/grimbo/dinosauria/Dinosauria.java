@@ -2,6 +2,7 @@ package com.grimbo.dinosauria;
 
 import com.grimbo.dinosauria.block.ModBlocks;
 import com.grimbo.dinosauria.entity.*;
+import com.grimbo.dinosauria.events.ModEvents;
 import com.grimbo.dinosauria.item.ModItems;
 import com.grimbo.dinosauria.setup.ClientProxy;
 import com.grimbo.dinosauria.setup.IProxy;
@@ -64,9 +65,10 @@ public class Dinosauria
         ModItems.register();
         ModBlocks.register();
         eventBus.addListener(this::doClientStuff);
+
         ModEntityTypes.ENTITY_TYPES.register(eventBus);
         MinecraftForge.EVENT_BUS.register(this);
-
+        MinecraftForge.EVENT_BUS.register(new ModEvents());
 
 
         // Register the setup method for modloading
