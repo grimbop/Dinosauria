@@ -87,6 +87,11 @@ public class ModItems {
                     () -> new AxeItem(ItemTier.THEROPOD, 5, -2f,
                             new Item.Properties().defaultMaxDamage(150).group(Dinosauria.DINOSAURIA)));
 
+    public static final RegistryObject<Item> SPINOSAUR_TOOTH_SPEAR =
+            Registration.ITEMS.register("spinosaur_tooth_spear",
+                    () -> new AxeItem(ItemTier.THEROPOD, 5, -3.3f,
+                            new Item.Properties().defaultMaxDamage(150).group(Dinosauria.DINOSAURIA)));
+
 
 
     /*

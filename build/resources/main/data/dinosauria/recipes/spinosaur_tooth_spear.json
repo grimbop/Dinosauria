@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  #",
+    " / ",
+    "/  "
+  ],
+  "key": {
+    "#": {
+      "item": "dinosauria:spinosaurid_tooth"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "dinosauria:spinosaur_tooth_spear",
+    "count": 1
+  }
+}
