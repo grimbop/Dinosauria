@@ -3,20 +3,25 @@ package com.grimbo.dinosauria.item;
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.item.ToolTip_items.*;
 import com.grimbo.dinosauria.util.Registration;
+import com.sun.jna.Structure;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.util.LazyValue;
 import net.minecraftforge.common.ToolType;
-import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.event.world.StructureSpawnListGatherEvent;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.function.Supplier;
 
 public class ModItems {
     //tools types for adding Tools Itens
-    enum TOOLTYPE{SHOVEL,PICKAXE,SWORD,AXE,HOE};
+    enum TOOLTYPE {SHOVEL, PICKAXE, SWORD, AXE, HOE}
+
+    ;
 
 
     /*
@@ -70,6 +75,24 @@ public class ModItems {
 
 
 
+    /*
+    Tools
+     */
+
+
+
+
+    public static final RegistryObject<Item> THEROPOD_TOOTH_KNIFE =
+            Registration.ITEMS.register("theropod_tooth_knife",
+                    () -> new AxeItem(ItemTier.THEROPOD, 5, -2f,
+                            new Item.Properties().defaultMaxDamage(150).group(Dinosauria.DINOSAURIA)));
+
+
+
+    /*
+    END OF TOOLS
+     */
+
 
     /*
     BONES
@@ -85,8 +108,8 @@ public class ModItems {
     public static final RegistryObject<Item> DROMAEOSAUR_BONE = registerItem("dromaeosaur_bone");
 
 
-    /** Skulls
-     *
+    /**
+     * Skulls
      */
 
     public static final RegistryObject<Item> BALAUR_SKULL = registerItem("balaur_skull", 1);
@@ -116,9 +139,8 @@ public class ModItems {
      */
 
 
-
     /**
-    FOOD
+     * FOOD
      */
     public static final RegistryObject<Item> BURGER = registerFood("burger", 8, 2);
 
@@ -152,9 +174,8 @@ public class ModItems {
      */
 
 
-
     /**
-    MATERIALS ITEMS
+     * MATERIALS ITEMS
      */
 
     public static final RegistryObject<Item> SPICY_WHEAT = registerItem("spicy_wheat");
@@ -169,24 +190,24 @@ public class ModItems {
 
     public static final RegistryObject<Item> WOODEN_RING = registerItem("wooden_ring", 1);
 
-    /** dino materials
-     *
+    /**
+     * dino materials
      */
 
     public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
-    () -> new DromaeosaurMaterialBalaur());
+            () -> new DromaeosaurMaterialBalaur());
 
     public static final RegistryObject<Item> SPINOSAUR_MATERIAL_IRRITATOR = registerItem("spinosaur_material_irritator",
-    () -> new SpinosaurMaterialIrritator());
+            () -> new SpinosaurMaterialIrritator());
 
     public static final RegistryObject<Item> THEROPOD_MATERIAL_DILOPHOSAURUS = registerItem("theropod_material_dilophosaurus",
-    () -> new TheropodMaterialDilophosaurus());
+            () -> new TheropodMaterialDilophosaurus());
 
     public static final RegistryObject<Item> THEROPOD_MATERIAL_MONOLOPHOSAURUS = registerItem("theropod_material_monolophosaurus",
-    () -> new TheropodMaterialMonolophosaurus());
+            () -> new TheropodMaterialMonolophosaurus());
 
     public static final RegistryObject<Item> ORNITHOPOD_MATERIAL_DRYOSAURUS = registerItem("ornithopod_material_dryosaurus",
-    () -> new OrnithopodMaterialDryosaurus());
+            () -> new OrnithopodMaterialDryosaurus());
 
 
     /*
@@ -194,16 +215,16 @@ public class ModItems {
      */
 
 
+    /**
+     * fuctions
+     **/
 
-    /** fuctions
-
-    **/
-
-    public static void register() {}
+    public static void register() {
+    }
 
 
     //function to register items without specific class
-    public static RegistryObject<Item> registerItem (String nameOfItem)   {
+    public static RegistryObject<Item> registerItem(String nameOfItem) {
 
         return Registration.ITEMS.register(nameOfItem,
                 () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)));
@@ -211,20 +232,20 @@ public class ModItems {
 
 
     //"registerItem" fuction with specific group
-    public static RegistryObject<Item> registerItem (String nameOfItem, ItemGroup itemGroup)   {
+    public static RegistryObject<Item> registerItem(String nameOfItem, ItemGroup itemGroup) {
 
-                return Registration.ITEMS.register(nameOfItem,
-                        () -> new Item(new Item.Properties().group(itemGroup)));
+        return Registration.ITEMS.register(nameOfItem,
+                () -> new Item(new Item.Properties().group(itemGroup)));
     }
 
 
     //"registerItem" fuction with supplier, to add others classes
-    public static <T extends Item> RegistryObject<Item> registerItem (String nameOfItem, Supplier<T> supplier)   {
+    public static <T extends Item> RegistryObject<Item> registerItem(String nameOfItem, Supplier<T> supplier) {
 
         return Registration.ITEMS.register(nameOfItem, supplier);
     }
 
-    public static <T extends Item> RegistryObject<Item> registerItem (String nameOfItem, int maxStackSize)   {
+    public static <T extends Item> RegistryObject<Item> registerItem(String nameOfItem, int maxStackSize) {
 
         return Registration.ITEMS.register(nameOfItem,
                 () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(maxStackSize)));
@@ -232,74 +253,73 @@ public class ModItems {
 
 
     //function to register food
-    public static RegistryObject<Item> registerFood (String nameOfItem, int hunger, float saturation)   {
+    public static RegistryObject<Item> registerFood(String nameOfItem, int hunger, float saturation) {
 
         return Registration.ITEMS.register(nameOfItem,//set nameOfItem
                 () -> new Item(new Item.Properties().food(new Food.Builder().
-                        hunger( Math.abs(hunger) ).//set hunger
-                        saturation( Math.max(0.2f,saturation) ).build()).//set saturation
-                        group( Dinosauria.DINOSAURIA)));//set group
+                        hunger(Math.abs(hunger)).//set hunger
+                        saturation(Math.max(0.2f, saturation)).build()).//set saturation
+                        group(Dinosauria.DINOSAURIA)));//set group
 
     }
 
 
     //fuction to register infectedFood
     public static <T extends Object> RegistryObject<Item> registerInfectedFood
-    (String nameOfItem, int hunger, Effect effects, int duration, int amplifier, float probability)   {
+    (String nameOfItem, int hunger, Effect effects, int duration, int amplifier, float probability) {
 
         return Registration.ITEMS.register(nameOfItem,
                 () -> new Item(new Item.Properties().group(Dinosauria.DINOSAURIA)
                         .food(new Food.Builder()
                                 .hunger(Math.abs(hunger))//sets a absolute "hunger"
-                                .effect(() -> new EffectInstance(effects, duration, Math.min(amplifier,255)), probability)//set the type, duration, amplifier and probality
+                                .effect(() -> new EffectInstance(effects, duration, Math.min(amplifier, 255)), probability)//set the type, duration, amplifier and probality
                                 .build())
                 ));
 
     }
 
 
-
     // register a tool with default minecraft ItemTier, like diamond
     public static RegistryObject<Item> registerTool(
             String name, TOOLTYPE toolType, ItemTier itemTier, float attackDamage,
-            float attackSpeed, int defaultMaxDamage, int toolTypeLevel){
+            float attackSpeed, int defaultMaxDamage, int toolTypeLevel) {
 
 
-        switch (toolType){
+        switch (toolType) {
 
             case SHOVEL:
 
                 return registerItem(name, () -> new ShovelItem(itemTier,
                         attackDamage, attackSpeed, new Item.Properties()
-                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.SHOVEL,toolTypeLevel).
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.SHOVEL, toolTypeLevel).
                                 group(ItemGroup.TOOLS)));
 
             case PICKAXE:
 
                 return registerItem(name, () -> new PickaxeItem(itemTier,
-                        (int)attackDamage, attackSpeed, new Item.Properties()
-                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.PICKAXE,toolTypeLevel).
+                        (int) attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.PICKAXE, toolTypeLevel).
                                 group(ItemGroup.TOOLS)));
 
             case SWORD:
 
                 return registerItem(name, () -> new SwordItem(itemTier,
-                        (int)attackDamage, attackSpeed, new Item.Properties()
+                        (int) attackDamage, attackSpeed, new Item.Properties()
                         .defaultMaxDamage(defaultMaxDamage).
                                 group(ItemGroup.COMBAT)));
 
             case HOE:
 
                 return registerItem(name, () -> new HoeItem(itemTier,
-                        (int)attackDamage, attackSpeed, new Item.Properties()
-                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.HOE,toolTypeLevel).
+                        (int) attackDamage, attackSpeed, new Item.Properties()
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.HOE, toolTypeLevel).
                                 group(ItemGroup.TOOLS)));
 
             case AXE:
 
                 return registerItem(name, () -> new AxeItem(itemTier,
                         attackDamage, attackSpeed, new Item.Properties()
-                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.AXE,toolTypeLevel).
+                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.AXE, toolTypeLevel).
                                 group(ItemGroup.TOOLS)));
 
             default:
@@ -308,127 +328,54 @@ public class ModItems {
         }
     }
 
-
-
-    // register a tool with mod ItemTier
-    public static RegistryObject<Item> registerTool(
-            String name, TOOLTYPE toolType, ModItemTier itemTier, float attackDamage,
-            float attackSpeed, int defaultMaxDamage, int toolTypeLevel){
-
-
-        switch (toolType){
-
-            case SHOVEL:
-
-                return registerItem(name, () -> new ShovelItem(itemTier,
-                        attackDamage, attackSpeed, new Item.Properties()
-                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.SHOVEL,toolTypeLevel).
-                                group(ItemGroup.TOOLS)));
-
-            case PICKAXE:
-
-                return registerItem(name, () -> new PickaxeItem(itemTier,
-                        (int)attackDamage, attackSpeed, new Item.Properties()
-                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.PICKAXE,toolTypeLevel).
-                                group(ItemGroup.TOOLS)));
-
-            case SWORD:
-
-                return registerItem(name, () -> new SwordItem(itemTier,
-                        (int)attackDamage, attackSpeed, new Item.Properties()
-                        .defaultMaxDamage(defaultMaxDamage).
-                                group(ItemGroup.COMBAT)));
-
-            case HOE:
-
-                return registerItem(name, () -> new HoeItem(itemTier,
-                        (int)attackDamage, attackSpeed, new Item.Properties()
-                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.HOE,toolTypeLevel).
-                                group(ItemGroup.TOOLS)));
-
-            case AXE:
-
-                return registerItem(name, () -> new AxeItem(itemTier,
-                        attackDamage, attackSpeed, new Item.Properties()
-                        .defaultMaxDamage(defaultMaxDamage).addToolType(ToolType.AXE,toolTypeLevel).
-                                group(ItemGroup.TOOLS)));
-
-            default:
-                return null;
-
-        }
-
-
-    }
-
-
-    /*
-    END OF FUCTIONS
-     */
-
-
-
-
-    //ITEM TIER
 
     //add a itemTier
-    public enum ModItemTier implements IItemTier {
-
-        THEROPOD(0, 0, 0, 0, 0,
-                null //add an item when created
-        ),
-        Ornithopod(0, 0, 0, 0, 0,
-                null //add an item when created
-        )
+    public enum ItemTier implements IItemTier {
+        THEROPOD(1, 245, 1.0F, 0.0F, 15, () -> {
+            return Ingredient.fromTag(ItemTags.PLANKS);
+        }),
         ;
-
 
         private final int harvestLevel;
         private final int maxUses;
         private final float efficiency;
         private final float attackDamage;
         private final int enchantability;
-        private final Ingredient repairMaterial;
+        private final LazyValue<Ingredient> repairMaterial;
 
-        ModItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage,
-                    int enchantability, Ingredient repairMaterial) {
-            this.harvestLevel = harvestLevel;
-            this.maxUses = maxUses;
-            this.efficiency = efficiency;
-            this.attackDamage = attackDamage;
-            this.enchantability = enchantability;
-            this.repairMaterial = repairMaterial;
+        private ItemTier(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn, Supplier<Ingredient> repairMaterialIn) {
+            this.harvestLevel = harvestLevelIn;
+            this.maxUses = maxUsesIn;
+            this.efficiency = efficiencyIn;
+            this.attackDamage = attackDamageIn;
+            this.enchantability = enchantabilityIn;
+            this.repairMaterial = new LazyValue<>(repairMaterialIn);
         }
 
-
         public int getMaxUses() {
-            return maxUses;
+            return this.maxUses;
         }
 
         public float getEfficiency() {
-            return efficiency;
+            return this.efficiency;
         }
 
         public float getAttackDamage() {
-            return attackDamage;
+            return this.attackDamage;
         }
 
         public int getHarvestLevel() {
-            return harvestLevel;
+            return this.harvestLevel;
         }
 
         public int getEnchantability() {
-            return enchantability;
+            return this.enchantability;
         }
 
         public Ingredient getRepairMaterial() {
-            return repairMaterial;
+            return this.repairMaterial.getValue();
         }
-
     }
-
-
-
 
 
 }
