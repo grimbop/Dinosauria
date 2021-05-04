@@ -55,7 +55,7 @@ public class ModEvents {
                 player.removePotionEffect(Effects.HASTE);
             }
         }
-        
+
     }
 
 
