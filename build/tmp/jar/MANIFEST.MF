@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: Dinosauria
-Implementation-Version: 0.14.2
-Specification-Vendor: dinosauriasareus
-Specification-Title: dinosauria
-Implementation-Timestamp: 2021-05-04T17:22:52-0300
-Specification-Version: 1
-Implementation-Vendor: dinosauriasareus
-
