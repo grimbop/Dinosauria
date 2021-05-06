@@ -34,8 +34,6 @@ import javax.naming.directory.AttributeModificationException;
 public class BalaurEntity extends AnimalEntity{
 
     public String BalaurTexture = isChild() ? "textures/entity/balaur_baby.png" : "textures/entity/balaur.png";
-    public int ageTick = -12000;//-12000
-    int growningAge = -1;
 
     protected BalaurEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
@@ -51,25 +49,15 @@ public class BalaurEntity extends AnimalEntity{
     }
 
 
-
-    @Override
-    public boolean isChild() {
-        return growningAge < 0;
-    }
-
-
     public void livingTick() {
         super.livingTick();
         if(isChild()) {
-            ageTick ++;
+            setGrowingAge(-12000);
             BalaurTexture =  "textures/entity/balaur_baby.png";
         }else{
             BalaurTexture = "textures/entity/balaur.png";
         }
 
-        if(ageTick > 0){
-            growningAge = 1;
-        }
 
     }
 

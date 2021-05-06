@@ -3,21 +3,16 @@ package com.grimbo.dinosauria.item;
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.item.ToolTip_items.*;
 import com.grimbo.dinosauria.util.Registration;
-import com.sun.jna.Structure;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.LazyValue;
 import net.minecraftforge.common.ToolType;
-import net.minecraftforge.event.world.StructureSpawnListGatherEvent;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.common.Mod;
 
 import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 public class ModItems {
     //tools types for adding Tools Itens
@@ -135,6 +130,9 @@ public class ModItems {
     /*
     EGGS
      */
+
+    public static final RegistryObject<Item> BALAUR_EGG_ITEM = Registration.ITEMS.register("balaur_egg_item",
+            () -> new BalaurEggItem(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(16)));
 
     /*
     END OF EGGS

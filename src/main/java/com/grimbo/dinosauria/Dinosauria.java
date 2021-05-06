@@ -10,6 +10,7 @@ import com.grimbo.dinosauria.setup.ServerProxy;
 import com.grimbo.dinosauria.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -48,9 +49,6 @@ public class Dinosauria
 
 
     public static IProxy proxy;
-
-
-
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -64,11 +62,13 @@ public class Dinosauria
         Registration.register();
         ModItems.register();
         ModBlocks.register();
+
         eventBus.addListener(this::doClientStuff);
 
         ModEntityTypes.ENTITY_TYPES.register(eventBus);
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new ModEvents());
+
 
 
         // Register the setup method for modloading
@@ -104,6 +104,8 @@ public class Dinosauria
           GlobalEntityTypeAttributes.put(ModEntityTypes.DRYOSAURUS.get(), DryosaurusEntity.setCustomAttributes().create());
 
           GlobalEntityTypeAttributes.put(ModEntityTypes.PLATYKOTTA.get(), PlatykottaEntity.setCustomAttributes().create());
+
+
         });
 
 
