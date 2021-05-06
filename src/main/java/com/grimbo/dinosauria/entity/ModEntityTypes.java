@@ -21,7 +21,7 @@ public class ModEntityTypes {
 
     public static final RegistryObject<EntityType<BalaurEntity>> BALAUR = Registration.ENTITIES.register("balaur",
             () -> EntityType.Builder.create(BalaurEntity::new , EntityClassification.CREATURE)
-    .size(1f, 1f)
+    .size(1f, 0.8f)
     .build(new ResourceLocation(Dinosauria.MOD_ID + "balaur").toString()));
 
 

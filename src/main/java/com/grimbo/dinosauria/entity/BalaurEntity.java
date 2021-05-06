@@ -1,11 +1,16 @@
 package com.grimbo.dinosauria.entity;
 
+import com.grimbo.dinosauria.entity.model.BalaurModel;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.entity.model.EntityModel;
+import net.minecraft.client.renderer.model.Model;
 import net.minecraft.entity.AgeableEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.controller.BodyController;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.passive.AnimalEntity;
@@ -19,26 +24,22 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import software.bernie.geckolib3.GeckoLib;
 
 import javax.annotation.Nullable;
 import javax.naming.directory.AttributeModificationException;
 
-public class BalaurEntity extends AnimalEntity {
+public class BalaurEntity extends AnimalEntity{
 
-    public float wingRotation;
-    public float destPos;
-    public float oFlapSpeed;
-    public float oFlap;
-    public float wingRotDelta = 1.0F;
-
-
-
+    public String BalaurTexture = isChild() ? "textures/entity/balaur_baby.png" : "textures/entity/balaur.png";
+    public int ageTick = -12000;//-12000
+    int growningAge = -1;
 
     protected BalaurEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
     }
-
 
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
@@ -50,32 +51,28 @@ public class BalaurEntity extends AnimalEntity {
     }
 
 
+
     @Override
-    public int getMaxAir() {
-        return 140;
+    public boolean isChild() {
+        return growningAge < 0;
     }
 
 
     public void livingTick() {
         super.livingTick();
-        this.oFlap = this.wingRotation;
-        this.oFlapSpeed = this.destPos;
-        this.destPos = (float)((double)this.destPos + (double)(this.onGround ? -1 : 4) * 0.3D);
-        this.destPos = MathHelper.clamp(this.destPos, 0.0F, 1.0F);
-        if (!this.onGround && this.wingRotDelta < 1.0F) {
-            this.wingRotDelta = 1.0F;
+        if(isChild()) {
+            ageTick ++;
+            BalaurTexture =  "textures/entity/balaur_baby.png";
+        }else{
+            BalaurTexture = "textures/entity/balaur.png";
         }
 
-        this.wingRotDelta = (float)((double)this.wingRotDelta * 0.9D);
-        Vector3d vector3d = this.getMotion();
-        if (!this.onGround && vector3d.y < 0.0D) {
-            this.setMotion(vector3d.mul(1.0D, 0.6D, 1.0D));
+        if(ageTick > 0){
+            growningAge = 1;
         }
-
-        this.wingRotation += this.wingRotDelta * 2.0F;
-
 
     }
+
 
     public boolean onLivingFall(float distance, float damageMultiplier) {
         return false;
@@ -104,8 +101,9 @@ public class BalaurEntity extends AnimalEntity {
 
     @Override
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(SoundEvents.ENTITY_COW_STEP, 1, 1);
+        this.playSound(SoundEvents.ENTITY_COW_STEP, 0.3f, 1);
     }
+
 
 
     //==GOALS==\\
