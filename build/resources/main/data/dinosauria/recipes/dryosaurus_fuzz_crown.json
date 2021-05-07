@@ -6,14 +6,14 @@
   ],
   "key": {
     "#": {
-      "item": "dinosauria:dryosaurus_quill"
+      "item": "dinosauria:dryosaurus_fuzz"
     },
     "/": {
       "item": "dinosauria:wooden_ring"
     }
   },
   "result": {
-    "item": "dinosauria:dryosaurus_quill_crown",
+    "item": "dinosauria:dryosaurus_fuzz_crown",
     "count": 1
   }
 }

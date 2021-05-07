@@ -44,6 +44,11 @@ public class DryosaurusEntity extends AnimalEntity {
     }
 
     @Override
+    public void setGrowingAge(int age) {
+        youngGrowningAge = age;
+    }
+
+    @Override
     public boolean isChild() {
         return youngGrowningAge < 0;
     }

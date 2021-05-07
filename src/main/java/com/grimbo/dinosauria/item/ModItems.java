@@ -33,7 +33,7 @@ public class ModItems {
 
     //place "registerArmor" after models
     public static final RegistryObject<Item> BALAUR_FEATRER_CROW = registerItem("balaur_feather_crown", 1);
-    public static final RegistryObject<Item> DRYOSAURUS_QUILL_CROWN = registerItem("dryosaurus_quill_crown", 1);
+    public static final RegistryObject<Item> DRYOSAURUS_FUZZ_CROWN = registerItem("dryosaurus_fuzz_crown", 1);
 
     /*
     END OF ARMOR
@@ -131,7 +131,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> SPICY_WHEAT = registerItem("spicy_wheat");
     public static final RegistryObject<Item> BALAUR_FEATHER = registerItem("balaur_feather");
-    public static final RegistryObject<Item> DRYOSAURUS_QUILL = registerItem("dryosaurus_quill");
+    public static final RegistryObject<Item> DRYOSAURUS_FUZZ = registerItem("dryosaurus_fuzz");
     public static final RegistryObject<Item> THEROPOD_TOOTH = registerItem("theropod_tooth");
     public static final RegistryObject<Item> SPINOSAURID_TOOTH = registerItem("spinosaurid_tooth");
     public static final RegistryObject<Item> WOODEN_RING = registerItem("wooden_ring", 1);

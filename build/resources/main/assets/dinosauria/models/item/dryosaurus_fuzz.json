@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "dinosauria:item/dryosaurus_quill"
+    "layer0": "dinosauria:item/dryosaurus_fuzz"
   }
 }

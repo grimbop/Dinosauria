@@ -60,7 +60,7 @@ public class DryosaurusModel<T extends DryosaurusEntity> extends EntityModel<T>
         textureHeight = 128;
 
         Dryosaurus = new ModelRenderer(this);
-        Dryosaurus.setRotationPoint(0.0F, 22.8F, 0.0F);
+        Dryosaurus.setRotationPoint(0.0F, 22.8F, -10.0F);
 
 
         Body = new ModelRenderer(this);
@@ -90,9 +90,9 @@ public class DryosaurusModel<T extends DryosaurusEntity> extends EntityModel<T>
         Head.setTextureOffset(41, 49).addBox(-3.0F, -2.0F, -11.0F, 6.0F, 5.0F, 6.0F, 0.0F, false);
 
         Jaw = new ModelRenderer(this);
-        Jaw.setRotationPoint(0.0F, 3.0F, -5.0F);
+        Jaw.setRotationPoint(-0.3F, 3.0F, -5.0F);
         Head.addChild(Jaw);
-        Jaw.setTextureOffset(41, 60).addBox(-2.7F, -1.0F, -5.8F, 5.0F, 2.0F, 5.0F, 0.0F, false);
+        Jaw.setTextureOffset(41, 59).addBox(-2.3F, -1.0F, -5.8F, 5.0F, 2.0F, 6.0F, 0.0F, false);
 
         Arm1 = new ModelRenderer(this);
         Arm1.setRotationPoint(6.8F, 1.0F, -21.0F);
@@ -105,7 +105,7 @@ public class DryosaurusModel<T extends DryosaurusEntity> extends EntityModel<T>
         Arm2.setTextureOffset(78, 60).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, true);
 
         Leg1 = new ModelRenderer(this);
-        Leg1.setRotationPoint(7.0F, -18.0F, 8.0F);
+        Leg1.setRotationPoint(10.0F, -18.0F, 8.0F);
         Dryosaurus.addChild(Leg1);
         Leg1.setTextureOffset(65, 0).addBox(-7.0F, -7.0F, -7.0F, 8.0F, 16.0F, 14.0F, 0.0F, false);
 
@@ -120,7 +120,7 @@ public class DryosaurusModel<T extends DryosaurusEntity> extends EntityModel<T>
         Feet1.setTextureOffset(0, 21).addBox(-4.0F, -1.0F, -6.0F, 7.0F, 3.0F, 7.0F, 0.0F, false);
 
         Leg2 = new ModelRenderer(this);
-        Leg2.setRotationPoint(-9.0F, -18.0F, 8.0F);
+        Leg2.setRotationPoint(-12.0F, -18.0F, 8.0F);
         Dryosaurus.addChild(Leg2);
         Leg2.setTextureOffset(65, 0).addBox(-1.0F, -7.0F, -7.0F, 8.0F, 16.0F, 14.0F, 0.0F, true);
 
@@ -133,7 +133,6 @@ public class DryosaurusModel<T extends DryosaurusEntity> extends EntityModel<T>
         Feet2.setRotationPoint(0.0F, 8.5F, -1.0F);
         Knee2.addChild(Feet2);
         Feet2.setTextureOffset(0, 21).addBox(-3.0F, -1.0F, -6.0F, 7.0F, 3.0F, 7.0F, 0.0F, true);
-
     }
 
     public void setDryosaurusYoungModel(){
