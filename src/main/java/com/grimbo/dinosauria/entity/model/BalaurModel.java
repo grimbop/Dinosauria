@@ -215,13 +215,13 @@ public class BalaurModel<T extends BalaurEntity> extends EntityModel<T>
         leg1.setRotationPoint(0.5F, 2.75F, 4.25F);
         balaur.addChild(leg1);
         leg1.setTextureOffset(0, 0).addBox(-0.25F, 0.0F, 0.0F, 1.0F, 2.0F, 0.0F, 0.0F, false);
-        leg1.setTextureOffset(3, 0).addBox(-0.25F, 1.98F, -2.0F, 1.0F, 0.0F, 2.0F, 0.0F, false);
+        leg1.setTextureOffset(3, 0).addBox(-0.25F, 1.98F, -2.0F, 1.0F, 0.02F, 2.0F, 0.0F, false);
 
         leg2 = new ModelRenderer(this);
         leg2.setRotationPoint(-0.5F, 2.75F, 4.25F);
         balaur.addChild(leg2);
         leg2.setTextureOffset(0, 0).addBox(-1.0F, 0.0F, 0.0F, 1.0F, 2.0F, 0.0F, 0.0F, true);
-        leg2.setTextureOffset(3, 0).addBox(-1.0F, 1.98F, -2.0F, 1.0F, 0.0F, 2.0F, 0.0F, true);
+        leg2.setTextureOffset(3, 0).addBox(-1.0F, 1.98F, -2.0F, 1.0F, 0.02F, 2.0F, 0.0F, true);
 
     }
 }

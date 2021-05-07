@@ -16,10 +16,7 @@ import java.util.function.Supplier;
 
 public class ModItems {
     //tools types for adding Tools Itens
-    enum TOOLTYPE {SHOVEL, PICKAXE, SWORD, AXE, HOE}
-
-    ;
-
+    enum TOOLTYPE {SHOVEL, PICKAXE, SWORD, AXE, HOE};
 
     /*
     DINO_ARMOR
@@ -36,7 +33,6 @@ public class ModItems {
 
     //place "registerArmor" after models
     public static final RegistryObject<Item> BALAUR_FEATRER_CROW = registerItem("balaur_feather_crown", 1);
-
     public static final RegistryObject<Item> DRYOSAURUS_QUILL_CROWN = registerItem("dryosaurus_quill_crown", 1);
 
     /*
@@ -48,13 +44,8 @@ public class ModItems {
     /*
     TROPHY
      */
-
     public static final RegistryObject<Item> DILOPHOSAURUS_CREST_TROPHY = registerItem("dilophosaurus_crest_trophy");
-
     public static final RegistryObject<Item> MONOLOPHOSAURUS_CREST_TROPHY = registerItem("monolophosaurus_crest_trophy");
-
-
-
     /*
     BOOKS
      */
@@ -75,17 +66,8 @@ public class ModItems {
     /*
     Tools
      */
-
-
-
-
     public static final RegistryObject<Item> THEROPOD_TOOTH_KNIFE = Registration.ITEMS.register("theropod_tooth_knife", () -> new AxeItem(ItemTier.THEROPOD, 4, -1.8f, new Item.Properties().defaultMaxDamage(150).group(Dinosauria.DINOSAURIA)));
-
     public static final RegistryObject<Item> SPINOSAUR_TOOTH_SPEAR = Registration.ITEMS.register("spinosaur_tooth_spear", () -> new AxeItem(ModItems.ItemTier.SPINOSAUR, 4, -2.5f, new Item.Properties().defaultMaxDamage(150).group(Dinosauria.DINOSAURIA)));
-
-
-
-
     /*
     END OF TOOLS
      */
@@ -94,33 +76,19 @@ public class ModItems {
     /*
     BONES
      */
-
-
     public static final RegistryObject<Item> THEROPOD_BONE = registerItem("theropod_bone");
-
     public static final RegistryObject<Item> SPINOSAUR_BONE = registerItem("spinosaur_bone");
-
     public static final RegistryObject<Item> ORNITHOPOD_BONE = registerItem("ornithopod_bone");
-
     public static final RegistryObject<Item> DROMAEOSAUR_BONE = registerItem("dromaeosaur_bone");
-
-
     /**
      * Skulls
      */
 
     public static final RegistryObject<Item> BALAUR_SKULL = registerItem("balaur_skull", 1);
-
     public static final RegistryObject<Item> DILOPHOSAURUS_SKULL = registerItem("dilophosaurus_skull", 1);
-
     public static final RegistryObject<Item> IRRITATOR_SKULL = registerItem("irritator_skull", 1);
-
     public static final RegistryObject<Item> DRYOSAURUS_SKULL = registerItem("dryosaurus_skull", 1);
-
     public static final RegistryObject<Item> MONOLOPHOSAURUS_SKULL = registerItem("monolophosaurus_skull", 1);
-
-
-
     /*
     END OF BONES
      */
@@ -130,10 +98,7 @@ public class ModItems {
     /*
     EGGS
      */
-
-    public static final RegistryObject<Item> BALAUR_EGG_ITEM = Registration.ITEMS.register("balaur_egg_item",
-            () -> new BalaurEggItem(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(16)));
-
+    public static final RegistryObject<Item> BALAUR_EGG_ITEM = Registration.ITEMS.register("balaur_egg_item", () -> new BalaurEggItem(new Item.Properties().group(Dinosauria.DINOSAURIA).maxStackSize(16)));
     /*
     END OF EGGS
      */
@@ -143,31 +108,17 @@ public class ModItems {
      * FOOD
      */
     public static final RegistryObject<Item> BURGER = registerFood("burger", 8, 2);
-
     public static final RegistryObject<Item> RAW_PLATYKOTTA = registerFood("raw_platykotta", 2, 1f);
-
     public static final RegistryObject<Item> COOKED_PLATYKOTTA = registerFood("cooked_platykotta", 8, 2f);
-
     public static final RegistryObject<Item> RAW_THEROPOD_MEAT = registerFood("raw_theropod_meat", 4, 1f);
-
     public static final RegistryObject<Item> COOKED_THEROPOD_MEAT = registerFood("cooked_theropod_meat", 10, 2f);
-
     public static final RegistryObject<Item> RAW_SPINOSAUR_MEAT = registerFood("raw_spinosaur_meat", 5, 1f);
-
     public static final RegistryObject<Item> COOKED_SPINOSAUR_MEAT = registerFood("cooked_spinosaur_meat", 11, 2f);
-
-    public static final RegistryObject<Item> RAW_DROMAEOSAUR_MEAT = registerInfectedFood("raw_dromaeosaur_meat",
-            2, Effects.HUNGER, 140, 1, 0.115F);
-
+    public static final RegistryObject<Item> RAW_DROMAEOSAUR_MEAT = registerInfectedFood("raw_dromaeosaur_meat", 2, Effects.HUNGER, 140, 1, 0.115F);
     public static final RegistryObject<Item> COOKED_DROMAEOSAUR_MEAT = registerFood("cookeed_dromaeosaur_meat", 8, 2f);
-
     public static final RegistryObject<Item> RAW_ORNITHOPOD_MEAT = registerFood("raw_ornithopod_meat", 5, 1f);
-
     public static final RegistryObject<Item> COOKED_ORNITHOPOD_MEAT = registerFood("cookeed_ornithopod_meat", 12, 2f);
-
-
-    public static final RegistryObject<Item> SPICY_BREAD = registerInfectedFood("spicy_bread",
-            4, Effects.SPEED, 200, 1, 1);
+    public static final RegistryObject<Item> SPICY_BREAD = registerInfectedFood("spicy_bread", 4, Effects.SPEED, 200, 1, 1);
 
     /*
     END OF FOOD
@@ -179,35 +130,21 @@ public class ModItems {
      */
 
     public static final RegistryObject<Item> SPICY_WHEAT = registerItem("spicy_wheat");
-
     public static final RegistryObject<Item> BALAUR_FEATHER = registerItem("balaur_feather");
-
     public static final RegistryObject<Item> DRYOSAURUS_QUILL = registerItem("dryosaurus_quill");
-
     public static final RegistryObject<Item> THEROPOD_TOOTH = registerItem("theropod_tooth");
-
     public static final RegistryObject<Item> SPINOSAURID_TOOTH = registerItem("spinosaurid_tooth");
-
     public static final RegistryObject<Item> WOODEN_RING = registerItem("wooden_ring", 1);
 
     /**
      * dino materials
      */
 
-    public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur",
-            () -> new DromaeosaurMaterialBalaur());
-
-    public static final RegistryObject<Item> SPINOSAUR_MATERIAL_IRRITATOR = registerItem("spinosaur_material_irritator",
-            () -> new SpinosaurMaterialIrritator());
-
-    public static final RegistryObject<Item> THEROPOD_MATERIAL_DILOPHOSAURUS = registerItem("theropod_material_dilophosaurus",
-            () -> new TheropodMaterialDilophosaurus());
-
-    public static final RegistryObject<Item> THEROPOD_MATERIAL_MONOLOPHOSAURUS = registerItem("theropod_material_monolophosaurus",
-            () -> new TheropodMaterialMonolophosaurus());
-
-    public static final RegistryObject<Item> ORNITHOPOD_MATERIAL_DRYOSAURUS = registerItem("ornithopod_material_dryosaurus",
-            () -> new OrnithopodMaterialDryosaurus());
+    public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur", () -> new DromaeosaurMaterialBalaur());
+    public static final RegistryObject<Item> SPINOSAUR_MATERIAL_IRRITATOR = registerItem("spinosaur_material_irritator", () -> new SpinosaurMaterialIrritator());
+    public static final RegistryObject<Item> THEROPOD_MATERIAL_DILOPHOSAURUS = registerItem("theropod_material_dilophosaurus", () -> new TheropodMaterialDilophosaurus());
+    public static final RegistryObject<Item> THEROPOD_MATERIAL_MONOLOPHOSAURUS = registerItem("theropod_material_monolophosaurus", () -> new TheropodMaterialMonolophosaurus());
+    public static final RegistryObject<Item> ORNITHOPOD_MATERIAL_DRYOSAURUS = registerItem("ornithopod_material_dryosaurus", OrnithopodMaterialDryosaurus::new);
 
 
     /*

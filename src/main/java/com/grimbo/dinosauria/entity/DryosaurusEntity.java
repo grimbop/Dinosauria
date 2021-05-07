@@ -26,14 +26,13 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 
 public class DryosaurusEntity extends AnimalEntity {
-    String[] DryoVariation = {"textures/entity/dryosaurus_plains.png","textures/entity/dryosaurus_savanna.png"};
-    public String DryoSetVariation = getDryoVariationTexture(getEntityWorld());
+    public String dryosaurusTexture = "textures/entity/dryosaurus_adult.png";
+    public int timeToAdult = 24000;
+    public int youngGrowningAge = 0;
 
     protected DryosaurusEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
     }
-
-
 
     public static AttributeModifierMap.MutableAttribute setCustomAttributes()
     {
@@ -44,26 +43,45 @@ public class DryosaurusEntity extends AnimalEntity {
 
     }
 
-
-
-
-    public String getDryoVariationTexture(IWorld world) {
-        Biome biome = world.getBiome(this.getPosition());
-        int i = 0;
-            if(biome.getCategory() == Biome.Category.SAVANNA){
-                i = 1;
-            }
-
-        return DryoVariation[i];
-    }
-
     @Override
-    public int getMaxAir() {
-        return 140;
+    public boolean isChild() {
+        return youngGrowningAge < 0;
+    }
+
+    public boolean isYoung(){
+        return youngGrowningAge < timeToAdult && !isChild();
+    }
+
+    public boolean isAdult(){
+        return !isChild() && !isYoung();
+    }
+
+    public String setTextureByAge(String babyTexture, String youngTexture, String adultTexture){
+
+        if(isChild()){
+            return babyTexture;
+        }else if(isYoung() && !isChild()){
+            return youngTexture;
+        }else if(isAdult()){
+            return adultTexture;
+        }else{
+            return adultTexture;
+        }
+
+    }
+    
+    @Override
+    public void livingTick() {
+        super.livingTick();
+        if(!isAdult()){
+            youngGrowningAge++;
+        }
+
+        dryosaurusTexture = setTextureByAge("textures/entity/dryosaurus_baby.png","textures/entity/dryosaurus_young.png","textures/entity/dryosaurus_adult.png");
     }
 
 
-//==SOUNDS==\\
+    //==SOUNDS==\\
 
     @Nullable
     @Override

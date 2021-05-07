@@ -11,18 +11,24 @@ import net.minecraft.util.ResourceLocation;
 
 public class BalaurRenderer extends MobRenderer<BalaurEntity, BalaurModel<BalaurEntity>> {
 
+    public int i = 0;
+
     public BalaurRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn, new BalaurModel<>(), 0.5f);
     }
 
-
-    @Override
-    public ResourceLocation getEntityTexture(BalaurEntity entity) {
-        if(entity.isChild()){
+    public void modelChange(boolean isChild){
+        if(isChild){
             entityModel.setBalaurBabyModel();
         }else{
             entityModel.setBalaurAdultModel();
         }
+    }
+
+    @Override
+    public ResourceLocation getEntityTexture(BalaurEntity entity) {
+        modelChange(entity.isChild());
+
 
         return new ResourceLocation(Dinosauria.MOD_ID, entity.BalaurTexture);
     }

@@ -55,15 +55,12 @@ public class BalaurEggEntity extends ProjectileItemEntity {
     protected void onImpact(RayTraceResult result) {
         super.onImpact(result);
         if (!this.world.isRemote) {
-            if (this.rand.nextInt(8) == 0) {
+            if (this.rand.nextInt(2) == 0) {
                 int i = 1;
-                if (this.rand.nextInt(32) == 0) {
-                    i = 4;
-                }
                 
                 for (int j = 0; j < i; ++j) {
                     BalaurEntity balaurEntity = ModEntityTypes.BALAUR.get().create(world);
-                    balaurEntity.setGrowingAge(-24000);
+                    balaurEntity.setGrowingAge(-100);
                     balaurEntity.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
                     this.world.addEntity(balaurEntity);
                 }

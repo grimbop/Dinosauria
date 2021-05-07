@@ -21,3 +21,155 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.gradle/4.10.3/fileContent/fileContent.lock
+.gradle/4.10.3/fileHashes/fileHashes.bin
+.gradle/4.10.3/fileHashes/fileHashes.lock
+.gradle/4.10.3/javaCompile/classAnalysis.bin
+.gradle/4.10.3/javaCompile/javaCompile.lock
+.gradle/4.10.3/taskHistory/taskHistory.bin
+.gradle/4.10.3/taskHistory/taskHistory.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.idea/workspace.xml
+run/.mixin.out/audit/mixin_implementation_report.txt
+run/crash-reports/crash-2021-05-06_10.20.09-fml.txt
+run/logs/2021-05-05-1.log.gz
+run/logs/2021-05-05-10.log.gz
+run/logs/2021-05-05-11.log.gz
+run/logs/2021-05-05-12.log.gz
+run/logs/2021-05-05-13.log.gz
+run/logs/2021-05-05-14.log.gz
+run/logs/2021-05-05-15.log.gz
+run/logs/2021-05-05-16.log.gz
+run/logs/2021-05-05-17.log.gz
+run/logs/2021-05-05-18.log.gz
+run/logs/2021-05-05-19.log.gz
+run/logs/2021-05-05-2.log.gz
+run/logs/2021-05-05-20.log.gz
+run/logs/2021-05-05-21.log.gz
+run/logs/2021-05-05-22.log.gz
+run/logs/2021-05-05-23.log.gz
+run/logs/2021-05-05-24.log.gz
+run/logs/2021-05-05-25.log.gz
+run/logs/2021-05-05-26.log.gz
+run/logs/2021-05-05-27.log.gz
+run/logs/2021-05-05-28.log.gz
+run/logs/2021-05-05-29.log.gz
+run/logs/2021-05-05-3.log.gz
+run/logs/2021-05-05-30.log.gz
+run/logs/2021-05-05-31.log.gz
+run/logs/2021-05-05-32.log.gz
+run/logs/2021-05-05-33.log.gz
+run/logs/2021-05-05-4.log.gz
+run/logs/2021-05-05-5.log.gz
+run/logs/2021-05-05-6.log.gz
+run/logs/2021-05-05-7.log.gz
+run/logs/2021-05-05-8.log.gz
+run/logs/2021-05-05-9.log.gz
+run/logs/2021-05-06-1.log.gz
+run/logs/2021-05-06-10.log.gz
+run/logs/2021-05-06-11.log.gz
+run/logs/2021-05-06-12.log.gz
+run/logs/2021-05-06-13.log.gz
+run/logs/2021-05-06-14.log.gz
+run/logs/2021-05-06-15.log.gz
+run/logs/2021-05-06-16.log.gz
+run/logs/2021-05-06-17.log.gz
+run/logs/2021-05-06-18.log.gz
+run/logs/2021-05-06-19.log.gz
+run/logs/2021-05-06-2.log.gz
+run/logs/2021-05-06-20.log.gz
+run/logs/2021-05-06-21.log.gz
+run/logs/2021-05-06-22.log.gz
+run/logs/2021-05-06-23.log.gz
+run/logs/2021-05-06-24.log.gz
+run/logs/2021-05-06-25.log.gz
+run/logs/2021-05-06-3.log.gz
+run/logs/2021-05-06-4.log.gz
+run/logs/2021-05-06-5.log.gz
+run/logs/2021-05-06-6.log.gz
+run/logs/2021-05-06-7.log.gz
+run/logs/2021-05-06-8.log.gz
+run/logs/2021-05-06-9.log.gz
+run/logs/debug-1.log.gz
+run/logs/debug-2.log.gz
+run/logs/debug-3.log.gz
+run/logs/debug-4.log.gz
+run/logs/debug-5.log.gz
+run/usercache.json
+run/saves/Test Map (1)/session.lock
+run/saves/Test Map (1)/serverconfig/forge-server.toml
+run/saves/Test Map (1)/region/r.0.1.mca
+run/saves/Test Map (1)/region/r.0.0.mca
+run/saves/Test Map (1)/region/r.0.-1.mca
+run/saves/Test Map (1)/region/r.-1.1.mca
+run/saves/Test Map (1)/region/r.-1.0.mca
+run/saves/Test Map (1)/region/r.-1.-1.mca
+run/saves/Test Map (1)/level.dat
+run/logs/2021-05-06-27.log.gz
+run/saves/Test Map (1)/stats/380df991-f603-344c-a090-369bad2a924a.json
+run/saves/Test Map (1)/region/r.-2.1.mca
+run/saves/Test Map (1)/region/r.-2.0.mca
+run/saves/Test Map (1)/region/r.-2.-1.mca
+run/saves/Test Map (1)/playerdata/380df991-f603-344c-a090-369bad2a924a.dat
+run/saves/Test Map (1)/level.dat_old
+run/saves/Test Map (1)/DIM1/data/raids_end.dat
+run/saves/Test Map (1)/DIM1/data/capabilities.dat
+run/saves/Test Map (1)/DIM-1/data/raids.dat
+run/saves/Test Map (1)/DIM-1/data/capabilities.dat
+run/saves/Test Map (1)/data/raids.dat
+run/saves/Test Map (1)/data/capabilities.dat
+run/saves/Test Map (1)/advancements/380df991-f603-344c-a090-369bad2a924a.json
+run/usercache.json
+run/logs/debug-5.log.gz
+run/logs/debug-4.log.gz
+run/logs/debug-3.log.gz
+run/logs/debug-2.log.gz
+run/logs/debug-1.log.gz
+run/logs/2021-05-06-26.log.gz
+run/logs/2021-05-05-9.log.gz
+run/logs/2021-05-05-8.log.gz
+run/logs/2021-05-05-7.log.gz
+run/logs/2021-05-05-6.log.gz
+run/logs/2021-05-05-5.log.gz
+run/logs/2021-05-05-4.log.gz
+run/logs/2021-05-05-31.log.gz
+run/logs/2021-05-05-30.log.gz
+run/logs/2021-05-05-3.log.gz
+run/logs/2021-05-05-29.log.gz
+run/logs/2021-05-05-28.log.gz
+run/logs/2021-05-05-27.log.gz
+run/logs/2021-05-05-26.log.gz
+run/logs/2021-05-05-25.log.gz
+run/logs/2021-05-05-24.log.gz
+run/logs/2021-05-05-23.log.gz
+run/logs/2021-05-05-22.log.gz
+run/logs/2021-05-05-21.log.gz
+run/logs/2021-05-05-20.log.gz
+run/logs/2021-05-05-2.log.gz
+run/logs/2021-05-05-19.log.gz
+run/logs/2021-05-05-18.log.gz
+run/logs/2021-05-05-17.log.gz
+run/logs/2021-05-05-16.log.gz
+run/logs/2021-05-05-15.log.gz
+run/logs/2021-05-05-14.log.gz
+run/logs/2021-05-05-13.log.gz
+run/logs/2021-05-05-12.log.gz
+run/logs/2021-05-05-11.log.gz
+run/logs/2021-05-05-10.log.gz
+run/logs/2021-05-05-1.log.gz
+run/.mixin.out/audit/mixin_implementation_report.txt
+.idea/workspace.xml
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/4.10.3/taskHistory/taskHistory.lock
+.gradle/4.10.3/taskHistory/taskHistory.bin
+.gradle/4.10.3/javaCompile/javaCompile.lock
+.gradle/4.10.3/javaCompile/classAnalysis.bin
+.gradle/4.10.3/fileHashes/fileHashes.lock
+.gradle/4.10.3/fileHashes/fileHashes.bin
+.gradle/4.10.3/fileContent/fileContent.lock
+.gradle/4.10.3/fileContent/fileContent.lock
+.gradle/4.10.3/fileHashes/fileHashes.bin
+.gradle/4.10.3/fileHashes/fileHashes.lock
+.gradle/4.10.3/javaCompile/classAnalysis.bin
+.gradle/4.10.3/javaCompile/javaCompile.lock
+.gradle/4.10.3/taskHistory/taskHistory.bin
