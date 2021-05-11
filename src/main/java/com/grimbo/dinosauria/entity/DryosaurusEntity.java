@@ -10,6 +10,7 @@ import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -26,9 +27,9 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 
 public class DryosaurusEntity extends AnimalEntity {
-    public String dryosaurusTexture = "textures/entity/dryosaurus_adult.png";
-    public int timeToAdult = 24000;
-    public int youngGrowningAge = 0;
+
+    public int timeToAdult = 20000 + rand.nextInt(10000);
+    public int youngGrowingAge;
 
     protected DryosaurusEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
@@ -40,53 +41,56 @@ public class DryosaurusEntity extends AnimalEntity {
                 createMutableAttribute(Attributes.MAX_HEALTH, 15)
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3D);
 
-
     }
 
-    @Override
-    public void setGrowingAge(int age) {
-        youngGrowningAge = age;
-    }
-
-    @Override
-    public boolean isChild() {
-        return youngGrowningAge < 0;
-    }
 
     public boolean isYoung(){
-        return youngGrowningAge < timeToAdult && !isChild();
+        return youngGrowingAge < timeToAdult;
     }
 
-    public boolean isAdult(){
-        return !isChild() && !isYoung();
-    }
-
-    public String setTextureByAge(String babyTexture, String youngTexture, String adultTexture){
-
-        if(isChild()){
-            return babyTexture;
-        }else if(isYoung() && !isChild()){
-            return youngTexture;
-        }else if(isAdult()){
-            return adultTexture;
-        }else{
-            return adultTexture;
-        }
-
-    }
-    
     @Override
     public void livingTick() {
         super.livingTick();
-        if(!isAdult()){
-            youngGrowningAge++;
+
+        if (this.isAlive()) {
+            int i = youngGrowingAge;
+            if(!isChild()) {
+                if (i < timeToAdult) {
+                    youngGrowingAge++;
+                } else if (i >= timeToAdult) {
+                    youngGrowingAge = timeToAdult;
+                }
+            }
         }
 
-        dryosaurusTexture = setTextureByAge("textures/entity/dryosaurus_baby.png","textures/entity/dryosaurus_young.png","textures/entity/dryosaurus_adult.png");
+
+    }
+
+    @Override
+    public void ageUp(int growthSeconds, boolean updateForcedAge) {
+        int i = this.getGrowingAge();
+        i = i + growthSeconds * 20;
+        if (i > timeToAdult) {
+            i = timeToAdult;
+        }
+
+        int j = i - i;
+        this.setGrowingAge(i);
+        if (updateForcedAge) {
+            this.forcedAge += j;
+            if (this.forcedAgeTimer == 0) {
+                this.forcedAgeTimer = 40;
+            }
+        }
+
+        if (this.getGrowingAge() == 0) {
+            this.setGrowingAge(this.forcedAge);
+        }
     }
 
 
-    //==SOUNDS==\\
+
+//==SOUNDS==\\
 
     @Nullable
     @Override

@@ -1,0 +1,6 @@
+{
+  "parent": "dinosauria:block/template_four_dryosaurus_egg_block",
+  "textures": {
+    "all": "dinosauria:block/very_cracked_dryosaurus_egg"
+  }
+}

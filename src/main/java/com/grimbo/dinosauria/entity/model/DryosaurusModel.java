@@ -41,8 +41,6 @@ public class DryosaurusModel<T extends DryosaurusEntity> extends EntityModel<T>
 
     }
 
-
-
     @Override
     public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
         Dryosaurus.render(matrixStack, buffer, packedLight, packedOverlay);

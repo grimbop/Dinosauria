@@ -49,8 +49,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,7 +80,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/assets/dinosauria/textures/entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/assets/dinosauria/textures/item" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -88,20 +88,20 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\textures\entity" />
       <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\textures\item" />
-      <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\data\dinosauria\recipes" />
+      <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\blockstates" />
       <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\models\item" />
-      <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\data\dinosauria\loot_tables\entities" />
+      <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\models\block" />
+      <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\textures\block" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\textures\item" />
       <recent name="C:\Users\Pichau\Documents\GitHub\Dinosauria\src\main\resources\assets\dinosauria\textures\entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.grimbo.dinosauria.entity.render" />
       <recent name="com.grimbo.dinosauria.item.ToolTip_items" />
       <recent name="com.grimbo.dinosauria.entity" />
-      <recent name="com.grimbo.dinosauria.entity.render" />
       <recent name="com.grimbo.dinosauria.entity.model" />
     </key>
   </component>
