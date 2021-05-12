@@ -40,10 +40,8 @@
   "item.dinosauria.balaur_egg_item": "Balaur Egg",
 
 
-
   "block.dinosauria.dryosaurus_egg_block": "Dryosaurus Egg",
   "block.dinosauria.daspletosaurus_skull": "Daspletosaurus Skull",
-
 
 
   "entity.dinosauria.dilophosaurus": "Dilophosaurus",
@@ -54,6 +52,10 @@
   "entity.dinosauria.platykotta": "Platykotta",
 
 
+  "effect.dinosauria.fisher_strike": "Fisher Strike",
+
 
   "itemGroup.dinosauriaTab": "Dinosauria"
+
+
 }

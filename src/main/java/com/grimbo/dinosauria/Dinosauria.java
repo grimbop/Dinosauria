@@ -1,6 +1,7 @@
 package com.grimbo.dinosauria;
 
 import com.grimbo.dinosauria.block.ModBlocks;
+import com.grimbo.dinosauria.effect.ModEffects;
 import com.grimbo.dinosauria.entity.*;
 import com.grimbo.dinosauria.events.ModEvents;
 import com.grimbo.dinosauria.item.ModItems;
@@ -62,6 +63,7 @@ public class Dinosauria
         Registration.register();
         ModItems.register();
         ModBlocks.register();
+        ModEffects.register();
 
         eventBus.addListener(this::doClientStuff);
 

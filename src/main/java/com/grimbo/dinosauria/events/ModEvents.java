@@ -1,5 +1,6 @@
 package com.grimbo.dinosauria.events;
 
+import com.grimbo.dinosauria.effect.ModEffects;
 import com.grimbo.dinosauria.item.ModItems;
 
 import net.minecraft.entity.LivingEntity;
@@ -25,34 +26,16 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class ModEvents {
 
-
     @SubscribeEvent
-        public void spinosaurSpearFishInstakill(AttackEntityEvent event)
-    {
-        if(event.getPlayer().getHeldItemMainhand().getItem() == ModItems.SPINOSAUR_TOOTH_SPEAR.get())
-        {
-            PlayerEntity player = (PlayerEntity)event.getPlayer();
-            LivingEntity target = (LivingEntity)event.getEntityLiving();
-
-            if(target instanceof SalmonEntity || target instanceof PufferfishEntity ||
-                    target instanceof CodEntity || target instanceof TropicalFishEntity) {
-
-                player.addPotionEffect(new EffectInstance(Effects.DOLPHINS_GRACE, 100, 2));
-            }
-
-        }
-    }
-
-    @SubscribeEvent
-    public void spinosaurSpearAttackSpeedIncreasement(TickEvent.PlayerTickEvent event)
+    public void spinosaurSpearAttackSpeedIncreasementInWater(TickEvent.PlayerTickEvent event)
     {
         if(event.player.getHeldItemMainhand().getItem() == ModItems.SPINOSAUR_TOOTH_SPEAR.get())
         {
             PlayerEntity player = (PlayerEntity)event.player;
             if(player.isInWater()){
-                player.addPotionEffect(new EffectInstance(Effects.HASTE, 1, 4));
+                player.addPotionEffect(new EffectInstance(ModEffects.FISHER_STRIKE.get(), 1));
             }else{
-                player.removePotionEffect(Effects.HASTE);
+                player.removePotionEffect(ModEffects.FISHER_STRIKE.get());
             }
         }
 
