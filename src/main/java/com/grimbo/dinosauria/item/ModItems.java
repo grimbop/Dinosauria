@@ -1,7 +1,6 @@
 package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
-import com.grimbo.dinosauria.item.ToolTip_items.*;
 import com.grimbo.dinosauria.util.Registration;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
@@ -140,11 +139,11 @@ public class ModItems {
      * dino materials
      */
 
-    public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur", () -> new DromaeosaurMaterialBalaur());
-    public static final RegistryObject<Item> SPINOSAUR_MATERIAL_IRRITATOR = registerItem("spinosaur_material_irritator", () -> new SpinosaurMaterialIrritator());
-    public static final RegistryObject<Item> THEROPOD_MATERIAL_DILOPHOSAURUS = registerItem("theropod_material_dilophosaurus", () -> new TheropodMaterialDilophosaurus());
-    public static final RegistryObject<Item> THEROPOD_MATERIAL_MONOLOPHOSAURUS = registerItem("theropod_material_monolophosaurus", () -> new TheropodMaterialMonolophosaurus());
-    public static final RegistryObject<Item> ORNITHOPOD_MATERIAL_DRYOSAURUS = registerItem("ornithopod_material_dryosaurus", OrnithopodMaterialDryosaurus::new);
+    public static final RegistryObject<Item> DROMAEOSAUR_MATERIAL_BALAUR = registerItem("dromaeosaur_material_balaur", () -> new ToolTipItems("\u00A76"+"Balaur" + "\u00A76"));
+    public static final RegistryObject<Item> SPINOSAUR_MATERIAL_IRRITATOR = registerItem("spinosaur_material_irritator", () -> new ToolTipItems("\u00A7b"+"Irritator" + "\u00A7b"));
+    public static final RegistryObject<Item> THEROPOD_MATERIAL_DILOPHOSAURUS = registerItem("theropod_material_dilophosaurus", () -> new ToolTipItems("\u00A74"+"Dilophosaurus" + "\u00A74"));
+    public static final RegistryObject<Item> THEROPOD_MATERIAL_MONOLOPHOSAURUS = registerItem("theropod_material_monolophosaurus", () -> new ToolTipItems("\u00A79"+"Monolophosaurus" + "\u00A79"));
+    public static final RegistryObject<Item> ORNITHOPOD_MATERIAL_DRYOSAURUS = registerItem("ornithopod_material_dryosaurus", () -> new ToolTipItems("\u00A74"+"Dryosaurus" + "\u00A74"));
 
 
     /*

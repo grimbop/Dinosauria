@@ -10,6 +10,9 @@ import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
 import net.minecraft.potion.Potions;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,6 +28,10 @@ public class Registration {
 
     public static final DeferredRegister<Effect> POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS, Dinosauria.MOD_ID);
 
+    public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, Dinosauria.MOD_ID);
+
+    public static final DeferredRegister<SurfaceBuilder<?>> SURFACE_BUILDERS = DeferredRegister.create(ForgeRegistries.SURFACE_BUILDERS, Dinosauria.MOD_ID);
+
 
 
     public static void register()
@@ -34,5 +41,7 @@ public class Registration {
         ITEMS.register(eventBus);
         ENTITIES.register(eventBus);
         POTIONS.register(eventBus);
+        BIOMES.register(eventBus);
+        SURFACE_BUILDERS.register(eventBus);
     }
 }

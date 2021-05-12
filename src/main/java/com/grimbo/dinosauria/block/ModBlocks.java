@@ -2,10 +2,7 @@ package com.grimbo.dinosauria.block;
 
 import com.grimbo.dinosauria.Dinosauria;
 import com.grimbo.dinosauria.util.Registration;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
@@ -25,6 +22,9 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> DRYOSAURUS_EGG_BLOCK = register("dryosaurus_egg_block", () -> new DryosaurusEggBlock(AbstractBlock.Properties.create(Material.DRAGON_EGG, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.METAL).tickRandomly().notSolid()));
+    public static final RegistryObject<Block> ARAUCARIA_LOG = register("araucaria_log", () -> new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> ARAUCARIA_LEAVES = register("araucaria_leaves", () -> new LeavesBlock(AbstractBlock.Properties.from(Blocks.OAK_LEAVES)));
+
 
 
 

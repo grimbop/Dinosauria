@@ -42,6 +42,8 @@
 
   "block.dinosauria.dryosaurus_egg_block": "Dryosaurus Egg",
   "block.dinosauria.daspletosaurus_skull": "Daspletosaurus Skull",
+  "block.dinosauria.araucaria_log": "Araucaria Log",
+  "block.dinosauria.araucaria_leaves": "Araucaria Leaves",
 
 
   "entity.dinosauria.dilophosaurus": "Dilophosaurus",
@@ -55,7 +57,8 @@
   "effect.dinosauria.fisher_strike": "Fisher Strike",
 
 
-  "itemGroup.dinosauriaTab": "Dinosauria"
+  "itemGroup.dinosauriaTab": "Dinosauria",
 
-
+  "biome.minecraft.dark_forest": "Dark Forest",
+  "biome.dinosauria.araucaria_plains": "Araucaria Plains"
 }

@@ -9,6 +9,8 @@ import com.grimbo.dinosauria.setup.ClientProxy;
 import com.grimbo.dinosauria.setup.IProxy;
 import com.grimbo.dinosauria.setup.ServerProxy;
 import com.grimbo.dinosauria.util.Registration;
+import com.grimbo.dinosauria.world.biome.ModBiomes;
+import com.grimbo.dinosauria.world.biome.ModSurfaceBuilders;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -65,7 +67,11 @@ public class Dinosauria
         ModBlocks.register();
         ModEffects.register();
 
+        ModSurfaceBuilders.register();
+        ModBiomes.register();
+
         eventBus.addListener(this::doClientStuff);
+
 
         ModEntityTypes.ENTITY_TYPES.register(eventBus);
         MinecraftForge.EVENT_BUS.register(this);

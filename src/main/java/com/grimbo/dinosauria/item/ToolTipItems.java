@@ -1,4 +1,4 @@
-package com.grimbo.dinosauria.item.ToolTip_items;
+package com.grimbo.dinosauria.item;
 
 import com.grimbo.dinosauria.Dinosauria;
 import net.minecraft.client.util.ITooltipFlag;
@@ -10,19 +10,18 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class TheropodMaterialDilophosaurus extends Item {
+public class ToolTipItems extends Item {
+    public String tooltip;
 
-    public TheropodMaterialDilophosaurus() {
+    public ToolTipItems(String tooltip) {
         super(new Properties().group(Dinosauria.DINOSAURIA));
+        this.tooltip = tooltip;
     }
 
     @Override
     public void addInformation(ItemStack stack, World world, List<ITextComponent> tooltip, ITooltipFlag flag){
-        tooltip.add(new StringTextComponent("\u00A74"+"Dilophosaurus" + "\u00A74"));
+        tooltip.add(new StringTextComponent(this.tooltip));
 
     }
-
-
-
 
 }
