@@ -38,12 +38,16 @@
   "item.dinosauria.theropod_tooth_knife": "Theropod Tooth Knife",
   "item.dinosauria.spinosaur_tooth_spear": "Spinosaurid Tooth Spear",
   "item.dinosauria.balaur_egg_item": "Balaur Egg",
+  "item.dinosauria.theropod_bone": "Theropod Bone",
 
 
   "block.dinosauria.dryosaurus_egg_block": "Dryosaurus Egg",
   "block.dinosauria.daspletosaurus_skull": "Daspletosaurus Skull",
   "block.dinosauria.araucaria_log": "Araucaria Log",
+  "block.dinosauria.araucaria_stripped_log": "Stripped Araucaria Log",
   "block.dinosauria.araucaria_leaves": "Araucaria Leaves",
+  "block.dinosauria.araucaria_planks": "Araucaria Planks",
+  "block.dinosauria.araucaria_door": "Araucaria Door",
 
 
   "entity.dinosauria.dilophosaurus": "Dilophosaurus",

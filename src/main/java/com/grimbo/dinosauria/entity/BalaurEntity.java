@@ -1,6 +1,7 @@
 package com.grimbo.dinosauria.entity;
 
 import com.grimbo.dinosauria.entity.model.BalaurModel;
+import com.grimbo.dinosauria.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.Model;
@@ -14,6 +15,7 @@ import net.minecraft.entity.ai.controller.BodyController;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -33,6 +35,7 @@ import javax.naming.directory.AttributeModificationException;
 
 public class BalaurEntity extends AnimalEntity{
     public String BalaurTexture = isChild() ? "textures/entity/balaur_baby.png" : "textures/entity/balaur.png";
+    public int timeUntilNextEgg = this.rand.nextInt(4800) + 9600;
 
     protected BalaurEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
@@ -51,6 +54,13 @@ public class BalaurEntity extends AnimalEntity{
         super.livingTick();
         if(isChild()){BalaurTexture =  "textures/entity/balaur_baby.png";}else{BalaurTexture = "textures/entity/balaur.png";}
 
+        if (!this.world.isRemote && this.isAlive() && !this.isChild() && this.timeUntilNextEgg <= 0) {
+            this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+            this.entityDropItem(ModItems.BALAUR_EGG_ITEM.get());
+            this.timeUntilNextEgg = this.rand.nextInt(4800) + 9600;
+        }else{
+            timeUntilNextEgg--;
+        }
 
     }
 

@@ -15,8 +15,7 @@ import java.util.function.Supplier;
 
 public class ModBiomes
 {
-    public static final RegistryObject<Biome> ARAUCARIA_PLAINS = Registration.BIOMES.register("araucaria_plains",
-            () -> makeAraucariaPlains(() -> WorldGenRegistries.CONFIGURED_SURFACE_BUILDER.getOrThrow(ModConfiguredSurfaceBuilders.PLAIN_SURFACE), 0.1f, 0.04f));
+    public static final RegistryObject<Biome> ARAUCARIA_PLAINS = Registration.BIOMES.register("araucaria_plains", () -> makeAraucariaPlains(() -> WorldGenRegistries.CONFIGURED_SURFACE_BUILDER.getOrThrow(ModConfiguredSurfaceBuilders.PLAIN_SURFACE), 0.08f, 0.015f));
 
 
     public static void register(){}
@@ -27,13 +26,13 @@ public class ModBiomes
     {
         MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
 
-        BiomeGenerationSettings.Builder biomegenerationsettings$builder =
-                (new BiomeGenerationSettings.Builder()).withSurfaceBuilder(ConfiguredSurfaceBuilders.field_244178_j);
+        BiomeGenerationSettings.Builder biomegenerationsettings$builder = (new BiomeGenerationSettings.Builder()).withSurfaceBuilder(ConfiguredSurfaceBuilders.field_244178_j);
 
         DefaultBiomeFeatures.withStrongholdAndMineshaft(biomegenerationsettings$builder);
         biomegenerationsettings$builder.withStructure(StructureFeatures.RUINED_PORTAL);
+        biomegenerationsettings$builder.withStructure(StructureFeatures.VILLAGE_TAIGA);
         DefaultBiomeFeatures.withCavesAndCanyons(biomegenerationsettings$builder);
-        DefaultBiomeFeatures.withLavaAndWaterLakes(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.withLavaLakes(biomegenerationsettings$builder);
         DefaultBiomeFeatures.withMonsterRoom(biomegenerationsettings$builder);
         DefaultBiomeFeatures.withTallGrass(biomegenerationsettings$builder);
         DefaultBiomeFeatures.withNormalGrassPatch(biomegenerationsettings$builder);
@@ -42,12 +41,18 @@ public class ModBiomes
         DefaultBiomeFeatures.withCommonOverworldBlocks(biomegenerationsettings$builder);
         DefaultBiomeFeatures.withOverworldOres(biomegenerationsettings$builder);
 
-        DefaultBiomeFeatures.withFrozenTopLayer(biomegenerationsettings$builder);
 
-        DefaultBiomeFeatures.withLavaAndWaterLakes(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.withLavaAndWaterSprings(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.withLavaAndWaterSprings(biomegenerationsettings$builder);
+        DefaultBiomeFeatures.withLavaAndWaterSprings(biomegenerationsettings$builder);
         DefaultBiomeFeatures.withLavaAndWaterSprings(biomegenerationsettings$builder);
 
-        mobspawninfo$builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.PARROT, 4, 1, 1)).withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.OCELOT, 2, 1, 1)).withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.SHEEP, 7, 2, 4)).withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.COW, 8, 2, 4)).withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.LLAMA ,10, 2, 6)).withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.PIG, 7, 2, 4));
+        DefaultBiomeFeatures.withHostileMobs(mobspawninfo$builder, 100, 10, 100);
+        mobspawninfo$builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.PARROT, 2, 1, 1));
+        mobspawninfo$builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.SHEEP, 3, 2, 4));
+        mobspawninfo$builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.COW, 4, 2, 4));
+        mobspawninfo$builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.LLAMA ,3, 2, 4));
+        mobspawninfo$builder.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(EntityType.PIG, 4, 2, 3));
 
 
         return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).category(Biome.Category.SWAMP).depth(depth).scale(scale).
